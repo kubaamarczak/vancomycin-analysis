@@ -1,0 +1,172 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman,shorthands=off]{babel}
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos}
+\usetheme{Madrid}
+\usecolortheme{seahorse} 
+\setbeamertemplate{navigation symbols}{}
+\usepackage[backend=biber]{biblatex} % Biber verwenden
+\addbibresource{/Users/jakubmarczak/Downloads/literatur.bib} % Bibliografiedatei einbinden
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+% Titelseite
+\title{Abschlussprojekt}
+\author{Sergio Alvarez, Ilkay Aydin, Jakub Marczak, Nermine Msolly}
+\date{\today}
+
+\begin{document}
+
+% Folie 1
+\frame{\titlepage}
+
+% Folie 2
+\begin{frame}
+    \frametitle{Inhalt}
+    
+    \begin{enumerate}
+        % Einleitung
+        \item Untersuchungsziele
+        % Graphiken
+        \item Population verstehen
+        \item Graphik 2
+        \item Graphik 3
+        \item Graphik 4
+        \item Graphik 5
+        \item Graphik 6
+        % \begin{enumerate}
+            % \item 
+        % \end{enumerate}
+        % Zusammenfassung
+        \item Zusammenfassung
+    \end{enumerate}
+\end{frame}
+
+% Folie 3
+\begin{frame}
+    \frametitle{Untersuchungsziele}
+    
+    \begin{itemize}
+        \item Wie effektiv ist die Behandlung mit Vancomycin? [Vancomycin-Therapie, Nephrotoxine (nierenschädigende Arzneien)]
+        \item[$\rightarrow$] mit Kormobiditäten [Komorbiditäten (Begleiterkrankungen)]
+        \item[$\rightarrow$] ohne Kormobiditäten
+        \item Inwiefern spielt die Dosis von Vancomycin eine Rolle?
+        \item[$\rightarrow$] Unterdosis -> Resistenz [Mikrobiologische Befunde]
+        \item[$\rightarrow$] Überdosis -> Nierenschäden [Nierenfunktion]
+        \item Inwiefern werden die Nieren beansprucht bei Zugabe von anderen Arzneien? [Nephrotoxine (nierenschädigende Arzneien)]
+        \item Inwiefern hängt die Schwere der Erkrankung von einer erfolgreichen Behandlung mit Vancomycin ab? [Schweregrad der Erkrankung]
+        \item Für welche Beschwerden funktioniert Vancomycin am besten/bzw. weniger gut? [Indikationen]
+        
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Untersuchungsziele}
+    
+    \begin{itemize}
+        \item Verständnis über die Population
+        \item Mortalitätsanalyse
+        \item Nierenschädigung
+    \end{itemize}
+\end{frame}
+
+% Folie 5
+\begin{frame}
+    \frametitle{Population verstehen}
+    % Graphik 1
+    \begin{center}
+        \includegraphics[width=1\linewidth]{dont rush 6 greatness ultra.png}
+        \begin{itemize}
+        	   \item betrachtete Variablen: Birthdate (in Age umgerechnet), Height, Weight
+        \end{itemize}
+    \end{center}
+\end{frame}
+
+% Mortalitätsanalyse
+
+% Folie 6
+\begin{frame}
+    \frametitle{Einstufungsarten des Schweregrades der Erkrankung auf die Mortalität}
+    % Graphik 2
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{SdE x mort.png}
+    \end{center}
+    \begin{itemize}
+        \item betrachtete Variablen: Schweregradvariablen, Mortalitydate (faktorisiert in \enquote{alive} und \enquote{dead})
+    \end{itemize}
+\end{frame}
+
+% Folie 7
+\begin{frame}
+    \frametitle{Einfluss vom Alter auf die Mortalitätsrate}
+    % Graphik 3
+    \begin{center}
+        \includegraphics[width=0.55\linewidth]{mort x age.png}
+    \end{center}
+\end{frame}
+
+% Folie 8
+\begin{frame}
+    \frametitle{Auswirkung von erster Vancomycingabe auf Nierenmarker}
+    % Graphik 4
+    \begin{center}
+        \includegraphics[width=1\linewidth]{vancomycingabe x nierenmarker.png}
+    \end{center}
+\end{frame}
+
+% Folie 9
+\begin{frame}
+    \frametitle{Graphik 5}
+    % Graphik 5
+    \begin{center}
+        \includegraphics[width=1\linewidth]{Maquehue.png}
+    \end{center}
+\end{frame}
+
+% Folie 10
+\begin{frame}
+    \frametitle{Graphik 6}
+    % Graphik 6
+    \begin{center}
+        \includegraphics[width=1\linewidth]{Maquehue.png}
+    \end{center}
+\end{frame}
+
+% Folie 11
+\begin{frame}
+    \frametitle{Zusammenfassung}
+    
+    \begin{itemize}
+    	\item Fußball ist punktarm
+        \item[$\rightarrow$] Bewertung von Torchancen durch xG
+        \item \(xG \in [0, 1]\)
+        \begin{itemize}
+        	   \item Trainer
+            \item Verein
+            \item Wettanbieter
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Folie 12
+\begin{frame}
+    \frametitle{Anhang}
+    \begin{itemize}
+        \item Genutzte R-Pakete
+        \begin{itemize}
+        	   \item ggplot2
+	   \item gridExtra
+            \item tidyr
+            \item dplyr
+            \item corrplot
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
+pdflatex abschlussprojekt.tex
