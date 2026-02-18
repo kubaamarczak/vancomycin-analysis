@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  18 FEB 2026 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  18 FEB 2026 21:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1293,11 +1293,10 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 87--87
  [][]  
  []
 
-<dont rush 6 greatness ultra.png, id=63, 2750.275pt x 1130.2225pt>
-File: dont rush 6 greatness ultra.png Graphic file (type png)
-<use dont rush 6 greatness ultra.png>
-Package pdftex.def Info: dont rush 6 greatness ultra.png  used on input line 87
-.
+<population verstehen.png, id=63, 2750.275pt x 1130.2225pt>
+File: population verstehen.png Graphic file (type png)
+<use population verstehen.png>
+Package pdftex.def Info: population verstehen.png  used on input line 87.
 (pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1306,7 +1305,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [5
 
- <./dont rush 6 greatness ultra.png>]
+ <./population verstehen.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 101--101
  [][]  
  []
@@ -1367,11 +1366,10 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 128--128
  [][]  
  []
 
-<Maquehue.png, id=101, 2007.5pt x 1204.5pt>
-File: Maquehue.png Graphic file (type png)
-<use Maquehue.png>
-Package pdftex.def Info: Maquehue.png  used on input line 128.
-(pdftex.def)             Requested size: 342.43532pt x 205.4607pt.
+File: population verstehen.png Graphic file (type png)
+<use population verstehen.png>
+Package pdftex.def Info: population verstehen.png  used on input line 128.
+(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1379,15 +1377,15 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [9
 
- <./Maquehue.png>]
+]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 137--137
  [][]  
  []
 
-File: Maquehue.png Graphic file (type png)
-<use Maquehue.png>
-Package pdftex.def Info: Maquehue.png  used on input line 137.
-(pdftex.def)             Requested size: 342.43532pt x 205.4607pt.
+File: population verstehen.png Graphic file (type png)
+<use population verstehen.png>
+Package pdftex.def Info: population verstehen.png  used on input line 137.
+(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1396,7 +1394,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 153--153
+Overfull \hbox (55.948pt too wide) in paragraph at lines 143--143
  [][]  
  []
 
@@ -1408,7 +1406,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [11
 
 ]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 168--168
+Overfull \hbox (55.948pt too wide) in paragraph at lines 158--158
  [][]  
  []
 
@@ -1434,32 +1432,38 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `abschlussprojekt.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                abschlussprojekt
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 \openout1 = `abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30622 strings out of 474116
- 598075 string characters out of 5743682
+ 30615 strings out of 474116
+ 597894 string characters out of 5743682
  1940187 words of memory out of 5000000
- 52406 multiletter control sequences out of 15000+600000
+ 52399 multiletter control sequences out of 15000+600000
  568821 words of font info for 64 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (12 pages, 834175 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
+Output written on abschlussprojekt.pdf (12 pages, 685077 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 162 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
