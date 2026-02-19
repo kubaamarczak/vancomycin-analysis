@@ -10,6 +10,7 @@ load("/Users/jakubmarczak/Downloads/vancomycin.RData")
 library(ggplot2)
 library(tidyr)
 library(gridExtra)
+library(grid)
 library(dplyr)
 library(corrplot)
 ## -----------------------------------------------------------------------------
@@ -466,21 +467,48 @@ ggplot() +
 ## ---------------------------------------------------------------------
 
 ## Graphik: Schweregrad der Erkrankung 
-dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"alive","dead")
+#Mortalität abhängig vom Schweregrad der Erkrankung, Subtitel: (Messwerte zu Beginn der Therapie)
+# bitte über den Graphik aufschreiben
+dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebt","Gestorben")
+
+my_colors <- c("Lebt" = "#4DBBD5",
+               "Gestorben" = "#E64B35")
+
 
 p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
-  geom_boxplot()
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "SOFA (aus 24P)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
-  geom_boxplot()
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "SAPS") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
-  geom_boxplot()
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "Leukozyten (nL)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 p4 <- ggplot(dat, aes(mortality_status, CRP)) +
-  geom_boxplot()
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "CRP (mg/dL)") +  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
-grid.arrange(p1, p2, p3, p4, ncol = 2)
+grid.arrange(
+  p1, p2, p3, p4,
+  ncol = 2)
 ## -----------------------------------
 
 ## Graphik: Mortalität nach Alter
