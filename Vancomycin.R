@@ -15,39 +15,42 @@ library(corrplot)
 ## -----------------------------------------------------------------------------
 
 ## POPULATION VERSTEHEN --------------------------------------------------------
-## Graphik: Alter, Größe & Gewicht
-opar <- par(mar = c(4.1, 4.1, 2.1, 2.1), mfrow = c(1, 1))
-par(mar = c(4.1, 4.1, 2.1, 2.1), mfrow = c(1, 3))
-
-## Altersverteilung
-dtfrm <- data.frame(
-  alter = dat$Birthdate
+## Graphik: Alter, Größe & Gewicht mit Geschlechtsunterscheidung
+df <- data.frame(
+  gender = dat$Gender,
+  birthdate = dat$Birthdate,
+  height = dat$Height,
+  weight = dat$Weight
 )
 
-dtfrm$alter <- as.numeric(difftime(Sys.Date(), as.Date(dtfrm$alter), 
-                                   units = "days"))/365.25
+df <- df %>%
+  mutate(
+    age = as.numeric(difftime(Sys.Date(), as.Date(birthdate), units = "days"))/365.25,
+    gender = factor(tolower(gender), levels = c("male","female"))
+  )
 
-dens <- density(dtfrm$alter, bw = "nrd0", adjust = 1, kernel = "gaussian")
-plot(dens, main = "Altersverteilung der Patienten", 
-     xlab = "age", ylab = "density")
-rug(dtfrm$alter)
-## ----------------
+long <- df %>%
+  select(gender, age, height, weight) %>%
+  pivot_longer(cols = c(age, height, weight),
+               names_to = "variable",
+               values_to = "value")
 
-## Größenverteilung
-dens <- density(dat$Height, bw = "nrd0", adjust = 1, kernel = "gaussian")
-plot(dens, main = "Größenverteilung der Patienten", 
-     xlab = "height in cm", ylab = "density")
-rug(dat$Height)
-## ----------------
+long$variable <- factor(long$variable,
+                             levels = c("age","height","weight"),
+                             labels = c("Alter (Jahre)", "Größe (cm)", "Gewicht (kg)"))
 
-## Gewichtsverteilung
-dens <- density(dat$Weight, bw = "nrd0", adjust = 1, kernel = "gaussian")
-plot(dens, main = "Gewichtsverteilung der Patienten", 
-     xlab = "weight in kg", ylab = "density")
-rug(dat$Weight)
-## ------------------
-par(opar)
-## -------------------------------
+ggplot(long, aes(x = value, color = gender)) +
+  geom_density(linewidth = 1) +
+  geom_rug() +
+  facet_wrap(~ variable, scales = "free", nrow = 1) +
+  labs(x = NULL, y = "Dichte", color = "Geschlecht") +
+  scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
+  theme_minimal() + theme(
+    text = element_text(size = 14),
+    axis.title = element_text(size = 16),
+    plot.title = element_text(size = 18)
+  )
+
 ##------------------------------------------------------------------------------
 
 ################################################################################
@@ -215,20 +218,24 @@ ggplot(long, aes(x = factor(gegeben), y = alter)) +
 ## --------------------------------------------------------------------
 
 ## Beziehung zwischen SCr und eGFR
+opar <- par(mar = c(4.1, 4.1, 2.1, 2.1), mfrow = c(1, 1))
+par(mar=c(0,0,0,0))
 dat_kidney <- data.frame(
-  scrstart = dat$SCrStart,
-  scr24 = dat$SCr24,
-  scr48 = dat$SCr48,
-  scr72 = dat$SCr72,
-  scrend = dat$SCrEnd,
-  egfrstart = dat$eGFRStart,
-  egfr24 = dat$eGFR24,
-  egfr48 = dat$eGFR48,
-  egfr72 = dat$eGFR72,
-  egfrend = dat$eGFREnd
+  SCrStart = dat$SCrStart,
+  SCr24 = dat$SCr24,
+  SCr48 = dat$SCr48,
+  SCr72 = dat$SCr72,
+  SCrEnd = dat$SCrEnd,
+  eGFRStart = dat$eGFRStart,
+  eGFR24 = dat$eGFR24,
+  eGFR48 = dat$eGFR48,
+  eGFR72 = dat$eGFR72,
+  eGFREnd = dat$eGFREnd
 )
 
-corrplot(cor(dat_kidney, use="complete.obs"))
+corrplot(cor(dat_kidney, use = "complete.obs"),
+         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.ratio = 0.15, cl.offset = 0.1)
+par(opar)
 ## -------------------------------
 
 ## Graphik: Verteilung des Unterschieds zwischen SCrStart und SCr72
