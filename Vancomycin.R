@@ -365,8 +365,12 @@ ggplot() +
   ) +
   geom_point(
     data = rate_df,
-    aes(x = Komorbiditaet, y = mort_rate * scale_factor),
-    color = "red", size = 3
+    aes(x = Komorbiditaet, y = mort_rate * scale_factor, color = "Mortalitätsrate", group = 1),
+    size = 3
+  ) +
+  scale_color_manual(
+    name = "",
+    values = c("Mortalitätsrate" = "red")
   ) +
   scale_y_continuous(
     name = "Anzahl Patienten",
