@@ -13,7 +13,57 @@ library(gridExtra)
 library(grid)
 library(dplyr)
 library(corrplot)
+library(hexbin)
 ## -----------------------------------------------------------------------------
+
+dat$C_mean <- rowMeans(dat[,c("C24","C48","C72")], na.rm=TRUE)
+dat$deltaSCr <- dat$SCr72 - dat$SCrStart
+dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
+
+ggplot(longC, aes(time, C)) +
+  geom_boxplot()
+
+longC <- dat %>%
+  select(C24, C48, C72) %>%
+  pivot_longer(cols = everything(),
+               names_to = "time",
+               values_to = "C")
+
+p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = "Mean Vancomycin concentration",
+    y = expression(Delta*"SCr")
+  ) +
+  theme_minimal()
+
+p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = "Mean Vancomycin concentration",
+    y = expression(Delta*"eGFR")
+  ) +
+  theme_minimal()
+
+longC <- dat %>%
+  select(C24, C48, C72) %>%
+  pivot_longer(cols = everything(),
+               names_to = "time",
+               values_to = "C")
+
+p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = "Mean Vancomycin concentration",
+    y = expression(Delta*"eGFR")
+  ) +
+  theme_minimal()
+
+grid.arrange(p1, p2, ncol = 2)
+grid.arrange(p3, p2, ncol = 2)
 
 ## POPULATION VERSTEHEN --------------------------------------------------------
 ## Graphik: Alter, Größe & Gewicht mit Geschlechtsunterscheidung
