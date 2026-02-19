@@ -344,6 +344,13 @@ rate_df <- dfexposed2 %>%
 
 scale_factor <- max(rate_df$n_total)
 
+order_levels <- rate_df %>%
+  arrange(desc(n_total)) %>%
+  pull(Komorbiditaet)
+
+count_df$Komorbiditaet <- factor(count_df$Komorbiditaet, levels = order_levels)
+rate_df$Komorbiditaet  <- factor(rate_df$Komorbiditaet,  levels = order_levels)
+
 ggplot() +
   # Balken: Anzahl (gestapelt nach Status)
   geom_col(
@@ -410,6 +417,13 @@ rate_df <- dfexposed2 %>%
   )
 
 scale_factor <- max(rate_df$n_total)
+
+order_levels <- rate_df %>%
+  arrange(desc(n_total)) %>%
+  pull(Nephrotoxin)
+
+count_df$Nephrotoxin <- factor(count_df$Nephrotoxin, levels = order_levels)
+rate_df$Nephrotoxin <- factor(rate_df$Nephrotoxin,  levels = order_levels)
 
 ggplot() +
   # Balken: Anzahl (gestapelt nach Status)
