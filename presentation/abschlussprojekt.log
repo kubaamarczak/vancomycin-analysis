@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 13:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1315,11 +1315,11 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 79--79
  [][]  
  []
 
-<ZhSCreGFR.png, id=68, 2710.125pt x 1316.92pt>
+<ZhSCreGFR.png, id=68, 2858.68pt x 1186.4325pt>
 File: ZhSCreGFR.png Graphic file (type png)
 <use ZhSCreGFR.png>
 Package pdftex.def Info: ZhSCreGFR.png  used on input line 79.
-(pdftex.def)             Requested size: 342.43532pt x 166.38292pt.
+(pdftex.def)             Requested size: 342.43532pt x 142.1123pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1332,11 +1332,11 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 91--91
  [][]  
  []
 
-<HexScat.png, id=79, 2710.125pt x 1316.92pt>
+<HexScat.png, id=79, 2858.68pt x 1186.4325pt>
 File: HexScat.png Graphic file (type png)
 <use HexScat.png>
 Package pdftex.def Info: HexScat.png  used on input line 91.
-(pdftex.def)             Requested size: 342.43532pt x 166.38292pt.
+(pdftex.def)             Requested size: 342.43532pt x 142.1123pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1500,7 +1500,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (13 pages, 1545855 bytes).
+Output written on abschlussprojekt.pdf (13 pages, 1536569 bytes).
 PDF statistics:
  187 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
