@@ -651,7 +651,100 @@ summary <- long %>%
 ggplot(summary, aes(comorbidity, mort_rate)) +
   geom_col()
 ## -------------------------------------------------------------------
+################################################################################
+## GRAPHIKEN - Mortalitätsanalyse (Nermine Msolly)
+################################################################################
 
+
+my_colors <- c("Lebt" = "#4DBBD5", "Gestorben" = "#E64B35")
+
+################################################################################
+## GRAPHIK7 Therapiedauer nach Mortalitätsstatus
+################################################################################
+
+dat <- dat %>%
+  mutate(
+    Start         = as.Date(Start),
+    End           = as.Date(End),
+    Therapiedauer = as.numeric(difftime(End, Start, units = "days"))
+  ) %>%
+  filter(!is.na(Therapiedauer), Therapiedauer >= 0)
+
+n_counts <- dat %>%
+  count(mortality_status) %>%
+  mutate(lbl = paste0(mortality_status, ": n=", n)) %>%
+  pull(lbl) %>%
+  paste(collapse = " | ")
+
+g_duration <- ggplot(dat, aes(x = mortality_status, y = Therapiedauer, fill = mortality_status)) +
+  geom_boxplot(width = 0.55, alpha = 0.85, outlier.alpha = 0.25) +
+  geom_jitter(width = 0.12, alpha = 0.08, size = 1) +
+  scale_fill_manual(values = my_colors) +
+  labs(
+    title    = "Therapiedauer nach Mortalitätsstatus",
+    subtitle = paste0("Dauer der kontinuierlichen Vancomycin-Infusion (", n_counts, ")"),
+    x        = "Lebenstatus",
+    y        = "Therapiedauer (Tage)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",
+    plot.title      = element_text(face = "bold")
+  )
+
+print(g_duration)
+
+################################################################################
+## GRAPHIK 8: Mortalitätsrate nach C24-Quartilen
+################################################################################
+
+dat_c24 <- dat %>%
+  filter(!is.na(C24)) %>%
+  mutate(
+    C24_Quartil = factor(
+      ntile(C24, 4),
+      levels = 1:4,
+      labels = c("Q1 (niedrig)", "Q2", "Q3", "Q4 (hoch)")
+    ),
+    gestorben = mortality_status == "Gestorben"
+  ) %>%
+  group_by(C24_Quartil) %>%
+  summarise(
+    Mortalitaetsrate = mean(gestorben, na.rm = TRUE),
+    n                = n(),
+    .groups          = "drop"
+  )
+
+g_c24 <- ggplot(dat_c24, aes(x = C24_Quartil, y = Mortalitaetsrate, fill = C24_Quartil)) +
+  geom_col(alpha = 0.9, width = 0.62) +
+  geom_text(
+    aes(label = paste0(percent(Mortalitaetsrate, accuracy = 0.1), "\n(n=", n, ")")),
+    vjust = -0.35,
+    size  = 4
+  ) +
+  scale_fill_manual(values = c(
+    "Q1 (niedrig)" = "#4DBBD5",
+    "Q2"           = "#90D4E0",
+    "Q3"           = "#F4A460",
+    "Q4 (hoch)"    = "#E64B35"
+  )) +
+  scale_y_continuous(
+    labels = percent_format(accuracy = 1),
+    expand = expansion(mult = c(0, 0.12))
+  ) +
+  labs(
+    title    = "Mortalitätsrate nach Vancomycin-Serumspiegel (C24)",
+    subtitle = "Einteilung der Patienten in Quartile des C24-Spiegels",
+    x        = "C24-Quartil",
+    y        = "Mortalitätsrate"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",
+    plot.title      = element_text(face = "bold")
+  )
+
+print(g_c24)
 
 
 ## -----------------------------------------------------------------------------
