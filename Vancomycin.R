@@ -49,7 +49,7 @@ ggplot(long, aes(x = value, color = gender)) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   theme_minimal() + theme(
-    text = element_text(size = 18),
+    text = element_text(size = 20),
     axis.title = element_text(size = 18),
     plot.title = element_text(size = 24)
   )
@@ -328,7 +328,8 @@ ggplot() +
          axis.text.x = element_text(size = 15),
          
          legend.title = element_text(size = 17),
-         legend.text  = element_text(size = 15)
+         legend.text  = element_text(size = 15),
+         panel.grid.major = element_blank()
   )
 ## -------------------------------------------------------------------
 
@@ -417,7 +418,8 @@ ggplot() +
         axis.text.x = element_text(size = 15),
         
         legend.title = element_text(size = 17),
-        legend.text  = element_text(size = 15)
+        legend.text  = element_text(size = 15),
+        panel.grid.major = element_blank()
     ) 
   
 ## ---------------------------------------------------------------------
