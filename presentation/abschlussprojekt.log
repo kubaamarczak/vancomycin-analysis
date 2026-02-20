@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 10:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1032,24 +1032,24 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
 (./abschlussprojekt.aux)
 \openout1 = `abschlussprojekt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1107,69 +1107,69 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (./abschlussprojekt.out) (./abschlussprojekt.out)
 \@outlinefile=\write6
 \openout6 = `abschlussprojekt.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 22.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 23.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 22.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 22.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 22.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 22.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 22.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 22.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 22.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 22.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 22.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 22.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 22.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 22.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 22.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 22.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 22.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 22.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 22.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 23.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 23.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 22
+(Font)              `pureletters' in the math version `normal' on input line 23
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 22
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 23
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 22.
+(Font)              `pureletters' in the math version `bold' on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 22
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 23
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 22.
+ut line 23.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1221,15 +1221,15 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'abschlussprojekt.bbl' not found.
 
 No file abschlussprojekt.bbl.
-Package biblatex Info: Reference section=0 on input line 22.
-Package biblatex Info: Reference segment=0 on input line 22.
+Package biblatex Info: Reference section=0 on input line 23.
+Package biblatex Info: Reference segment=0 on input line 23.
 (./abschlussprojekt.nav)
-Overfull \hbox (55.948pt too wide) in paragraph at lines 22--22
+Overfull \hbox (55.948pt too wide) in paragraph at lines 23--23
  [][]  
  []
 
 
-Overfull \hbox (55.948pt too wide) in paragraph at lines 25--25
+Overfull \hbox (55.948pt too wide) in paragraph at lines 26--26
  [][]  
  []
 
@@ -1242,41 +1242,29 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 47--47
+Overfull \hbox (55.948pt too wide) in paragraph at lines 44--44
  [][]  
  []
 
-
-Overfull \hbox (55.948pt too wide) has occurred while \output is active
- [][]  
- []
-
-[2
-
-]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 67--67
- [][]  
- []
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 67
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 44
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 67.
+ut line 44.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1286,29 +1274,17 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
  []
 
-[3
+[2
 
 ]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 77--77
+Overfull \hbox (55.948pt too wide) in paragraph at lines 55--55
  [][]  
  []
 
-
-Overfull \hbox (55.948pt too wide) has occurred while \output is active
- [][]  
- []
-
-[4
-
-]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 88--88
- [][]  
- []
-
-<population verstehen gender.png, id=63, 2651.9075pt x 1373.13pt>
+<population verstehen gender.png, id=49, 2651.9075pt x 1373.13pt>
 File: population verstehen gender.png Graphic file (type png)
 <use population verstehen gender.png>
-Package pdftex.def Info: population verstehen gender.png  used on input line 88
+Package pdftex.def Info: population verstehen gender.png  used on input line 55
 .
 (pdftex.def)             Requested size: 342.43532pt x 177.29793pt.
 
@@ -1316,18 +1292,53 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
  []
 
-[5
+[3
 
  <./population verstehen gender.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 100--100
+Overfull \hbox (55.948pt too wide) in paragraph at lines 67--67
  [][]  
  []
 
-<corrplot nierenmarker.jpeg, id=74, 1176.395pt x 1057.9525pt>
+<corrplot nierenmarker.jpeg, id=60, 1176.395pt x 1057.9525pt>
 File: corrplot nierenmarker.jpeg Graphic file (type jpg)
 <use corrplot nierenmarker.jpeg>
-Package pdftex.def Info: corrplot nierenmarker.jpeg  used on input line 100.
+Package pdftex.def Info: corrplot nierenmarker.jpeg  used on input line 67.
 (pdftex.def)             Requested size: 205.46327pt x 184.77316pt.
+
+Overfull \hbox (55.948pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[4
+
+ <./corrplot nierenmarker.jpeg>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 79--79
+ [][]  
+ []
+
+<vancomycin nierenmarker.png, id=68, 2304.61pt x 977.6525pt>
+File: vancomycin nierenmarker.png Graphic file (type png)
+<use vancomycin nierenmarker.png>
+Package pdftex.def Info: vancomycin nierenmarker.png  used on input line 79.
+(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
+
+Overfull \hbox (55.948pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[5
+
+ <./vancomycin nierenmarker.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 91--91
+ [][]  
+ []
+
+<vancomycin nierenmarker vgl.png, id=79, 2304.61pt x 977.6525pt>
+File: vancomycin nierenmarker vgl.png Graphic file (type png)
+<use vancomycin nierenmarker vgl.png>
+Package pdftex.def Info: vancomycin nierenmarker vgl.png  used on input line 91
+.
+(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1335,16 +1346,16 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [6
 
- <./corrplot nierenmarker.jpeg>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 112--112
+ <./vancomycin nierenmarker vgl.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 104--104
  [][]  
  []
 
-<vancomycin nierenmarker.png, id=82, 2304.61pt x 977.6525pt>
-File: vancomycin nierenmarker.png Graphic file (type png)
-<use vancomycin nierenmarker.png>
-Package pdftex.def Info: vancomycin nierenmarker.png  used on input line 112.
-(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
+<SdE x lbst.png, id=88, 1413.28pt x 1459.4525pt>
+File: SdE x lbst.png Graphic file (type png)
+<use SdE x lbst.png>
+Package pdftex.def Info: SdE x lbst.png  used on input line 104.
+(pdftex.def)             Requested size: 136.97203pt x 141.4331pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1352,17 +1363,20 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [7
 
- <./vancomycin nierenmarker.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 124--124
+ <./SdE x lbst.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 116--116
  [][]  
  []
 
-<vancomycin nierenmarker vgl.png, id=94, 2304.61pt x 977.6525pt>
-File: vancomycin nierenmarker vgl.png Graphic file (type png)
-<use vancomycin nierenmarker vgl.png>
-Package pdftex.def Info: vancomycin nierenmarker vgl.png  used on input line 12
-4.
-(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
+<Kormo x Mort.png, id=98, 1606.0pt x 903.375pt>
+File: Kormo x Mort.png Graphic file (type png)
+<use Kormo x Mort.png>
+Package pdftex.def Info: Kormo x Mort.png  used on input line 116.
+(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
+
+Overfull \vbox (9.85892pt too high) detected at line 116
+ []
+
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1370,16 +1384,20 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [8
 
- <./vancomycin nierenmarker vgl.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 140--140
+ <./Kormo x Mort.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 127--127
  [][]  
  []
 
-<SdE x lbst.png, id=103, 1413.28pt x 1459.4525pt>
-File: SdE x lbst.png Graphic file (type png)
-<use SdE x lbst.png>
-Package pdftex.def Info: SdE x lbst.png  used on input line 140.
-(pdftex.def)             Requested size: 136.97203pt x 141.4331pt.
+<Nephro x Mort.png, id=107, 1606.0pt x 903.375pt>
+File: Nephro x Mort.png Graphic file (type png)
+<use Nephro x Mort.png>
+Package pdftex.def Info: Nephro x Mort.png  used on input line 127.
+(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
+
+Overfull \vbox (11.80289pt too high) detected at line 127
+ []
+
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1387,20 +1405,16 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [9
 
- <./SdE x lbst.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 152--152
+ <./Nephro x Mort.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 136--136
  [][]  
  []
 
-<Kormo x Mort.png, id=112, 1606.0pt x 903.375pt>
-File: Kormo x Mort.png Graphic file (type png)
-<use Kormo x Mort.png>
-Package pdftex.def Info: Kormo x Mort.png  used on input line 152.
-(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
-
-Overfull \vbox (9.85892pt too high) detected at line 152
- []
-
+<population verstehen.png, id=116, 2750.275pt x 1130.2225pt>
+File: population verstehen.png Graphic file (type png)
+<use population verstehen.png>
+Package pdftex.def Info: population verstehen.png  used on input line 136.
+(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1408,20 +1422,15 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [10
 
- <./Kormo x Mort.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 163--163
+ <./population verstehen.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 145--145
  [][]  
  []
 
-<Nephro x Mort.png, id=121, 1606.0pt x 903.375pt>
-File: Nephro x Mort.png Graphic file (type png)
-<use Nephro x Mort.png>
-Package pdftex.def Info: Nephro x Mort.png  used on input line 163.
-(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
-
-Overfull \vbox (11.80289pt too high) detected at line 163
- []
-
+File: population verstehen.png Graphic file (type png)
+<use population verstehen.png>
+Package pdftex.def Info: population verstehen.png  used on input line 145.
+(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1429,16 +1438,11 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [11
 
- <./Nephro x Mort.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 172--172
+]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 151--151
  [][]  
  []
 
-<population verstehen.png, id=130, 2750.275pt x 1130.2225pt>
-File: population verstehen.png Graphic file (type png)
-<use population verstehen.png>
-Package pdftex.def Info: population verstehen.png  used on input line 172.
-(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1446,45 +1450,17 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [12
 
- <./population verstehen.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 181--181
+]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 166--166
  [][]  
  []
 
-File: population verstehen.png Graphic file (type png)
-<use population verstehen.png>
-Package pdftex.def Info: population verstehen.png  used on input line 181.
-(pdftex.def)             Requested size: 342.43532pt x 140.70834pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
  []
 
 [13
-
-]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 187--187
- [][]  
- []
-
-
-Overfull \hbox (55.948pt too wide) has occurred while \output is active
- [][]  
- []
-
-[14
-
-]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 202--202
- [][]  
- []
-
-
-Overfull \hbox (55.948pt too wide) has occurred while \output is active
- [][]  
- []
-
-[15
 
 ]
 \tf@nav=\write7
@@ -1508,10 +1484,10 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30926 strings out of 474116
- 602269 string characters out of 5743682
- 1940187 words of memory out of 5000000
- 52689 multiletter control sequences out of 15000+600000
+ 30919 strings out of 474116
+ 602214 string characters out of 5743682
+ 1937187 words of memory out of 5000000
+ 52686 multiletter control sequences out of 15000+600000
  575478 words of font info for 86 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1522,10 +1498,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (15 pages, 1413872 bytes).
+Output written on abschlussprojekt.pdf (13 pages, 1409451 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
