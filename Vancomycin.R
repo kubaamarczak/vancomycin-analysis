@@ -137,6 +137,18 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
 grid.arrange(p1, p2, ncol = 2)
 grid.arrange(p3, p2, ncol = 2)
 ## -----------------------------------------------------------------
+
+## Graphik: Nierenfunktion verglichen mit Vancomycin Spiegel
+ggplot(dat, aes(x = eGFRStart, y = C24)) +
+  geom_point(aes(color = Weight), alpha = 1) + # Gewicht als zusätzliche Info
+  geom_smooth(method = "lm", color = "darkred", linewidth = 1.5, se= FALSE) +
+  scale_color_viridis_c() +
+  labs( x = "Nierenfunktion bei Start (eGFR in ml/min)",
+        y = "Vancomycin-Spiegel nach 24h (mg/L)",
+        color = "Gewicht (kg)"
+  ) +
+  theme_minimal()
+## ---------------------------------------------------------
 ## -----------------------------------------------------------------------------
 
 ################################################################################
@@ -191,6 +203,33 @@ grid.arrange(
   p1, p2, p3, p4,
   ncol = 2)
 ## -----------------------------------
+
+## Graphik: Wie der Vancomycin Spiegel sich auf die Sterberate auswirkt
+dat$Verstorben <- !is.na(dat$Mortalitydate)
+
+#C24 in Gruppen einteilen
+dat$C24_Kategorie <- cut(dat$C24, 
+                         breaks = c(0, 15, 20, 25, 30, Inf), 
+                         labels = c("<15", "15-20", "20-25", "25-30", ">30"))
+
+# Sterberate pro Gruppe berechnen
+mort_data <- dat %>%
+  group_by(C24_Kategorie) %>%
+  summarise(
+    Sterberate = mean(Verstorben) * 100,
+    n = n()
+  )
+
+ggplot(mort_data, aes(x = C24_Kategorie, y = Sterberate, fill = Sterberate)) +
+  geom_bar(stat = "identity", color = "white") +
+  geom_text(aes(label = paste0("n=", n)), vjust = -0.5, size = 4) +
+  scale_fill_gradient(low = "#e74c3c", high = "darkred") +
+  labs(x = "Vancomycin-Spiegel nach 24h (mg/L)",
+       y = "Sterberate (%)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+#Anstieg Sterberate ab Vancomycin-Spiegel über 20mg/L signifikant steigend
+## ---------------------------------------------------------------------
 
 ## Graphik: Welche Komorbiditäten begleiten die Mortalität am meisten?
 dfKomor <- data.frame(
