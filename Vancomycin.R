@@ -657,7 +657,6 @@ ggplot(summary, aes(comorbidity, mort_rate)) +
 
 ## GRAPHIK 7: Therapiedauer nach Mortalitätsstatus -----------------------------
 
-# حسب mortality_status قبل الفلتر
 dat$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
 
 dat <- dat %>%
