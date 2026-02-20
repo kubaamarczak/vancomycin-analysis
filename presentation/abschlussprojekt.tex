@@ -12,6 +12,7 @@
 \addbibresource{/Users/jakubmarczak/Downloads/literatur.bib} % Bibliografiedatei einbinden
 \usepackage{csquotes}
 \usepackage{hyperref}
+\usepackage{wasysym}
 
 % Titelseite
 \title{Abschlussprojekt}
@@ -79,39 +80,47 @@
 \begin{frame}
     \frametitle{Population verstehen}
     % Graphik 1
-    \begin{center}
+    \begin{figure}
+        \centering
         \includegraphics[width=1\linewidth]{population verstehen gender.png}
-        \begin{itemize}
-        	   \item betrachtete Variablen: Birthdate (in Age umgerechnet), Height, Weight
-        \end{itemize}
-    \end{center}
+        \caption{Kerndichteschätzungen für Alter, Größe und Gewicht.}
+    \end{figure}
 \end{frame}
 
 % Folie 8
 \begin{frame}
     \frametitle{Auswirkung von erster Vancomycingabe auf Nierenmarker}
     % Graphik 4
-    \begin{center}
+    \begin{figure}
+        \centering
         \includegraphics[width=0.6\linewidth]{corrplot nierenmarker.jpeg}
-    \end{center}
+        \caption{Korrelationsplot zwischen SCr- und eGFR-Werten als Nierenmarker.}
+    \end{figure}
+    
 \end{frame}
 
 % Folie 8
 \begin{frame}
-    \frametitle{Auswirkung von erster Vancomycingabe auf Nierenmarker}
-    % Graphik 4
-    \begin{center}
-        \includegraphics[width=1\linewidth]{nierenmarker vancomycin.png}
-    \end{center}
+    \frametitle{Auswirkung vom Vancomycin-Spiegel auf Nierenmarker}
+    % Graphik 4    
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{vancomycin nierenmarker.png}
+        \caption{Hexbin-Plots von SCr und eGFR in Abhängigkeit von der mittleren C-Konzentration ($\bar{C}$).}
+    \end{figure}
+    
 \end{frame}
 
 % Folie 8
 \begin{frame}
-    \frametitle{Auswirkung von erster Vancomycingabe auf Nierenmarker}
+    \frametitle{Auswirkung vom Vancomycin-Spiegel auf Nierenmarker}
     % Graphik 4
-    \begin{center}
-        \includegraphics[width=1\linewidth]{nierenmarker vancomycin vgl.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{vancomycin nierenmarker vgl.png}
+        \caption{Vergleich der Darstellung desselben Datensatzes als Scatterplot und Hexbin-Plot.}
+    \end{figure}
+    
 \end{frame}
 
 % Mortalitätsanalyse
@@ -134,18 +143,23 @@
 \begin{frame}
     \frametitle{Welche Komorbiditäten begleiten die Mortalität am meisten?}
     % Graphik 5
-    \begin{center}
-        \includegraphics[width=0.6\linewidth]{mort x kom.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{mort x kom.png}
+        \caption{Barplot Anzahl von Patienten und Mortalitätsrate abhängig von Komorbiditäten.}
+    \end{figure}
+    
 \end{frame}
 
 % Folie 10
 \begin{frame}
     \frametitle{Welche Nephrotoxine begleiten die Mortalität am meisten?}
-    % Graphik 6
-    \begin{center}
-        \includegraphics[width=0.6\linewidth]{mort x nep.png}
-    \end{center}
+    % Graphik 6    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{mort x nep.png}
+        \caption{Barplot Anzahl von Patienten und Mortalitätsrate abhängig von Nephrotoxinen.}
+    \end{figure}
 \end{frame}
 
 % Folie 11

@@ -16,55 +16,6 @@ library(corrplot)
 library(hexbin)
 ## -----------------------------------------------------------------------------
 
-dat$C_mean <- rowMeans(dat[,c("C24","C48","C72")], na.rm=TRUE)
-dat$deltaSCr <- dat$SCr72 - dat$SCrStart
-dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
-
-ggplot(longC, aes(time, C)) +
-  geom_boxplot()
-
-longC <- dat %>%
-  select(C24, C48, C72) %>%
-  pivot_longer(cols = everything(),
-               names_to = "time",
-               values_to = "C")
-
-p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
-  geom_hex(alpha = 0.75, bins = 41) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
-  labs(
-    x = "Mean Vancomycin concentration",
-    y = expression(Delta*"SCr")
-  ) +
-  theme_minimal()
-
-p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
-  geom_point(alpha = 0.75) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
-  labs(
-    x = "Mean Vancomycin concentration",
-    y = expression(Delta*"eGFR")
-  ) +
-  theme_minimal()
-
-longC <- dat %>%
-  select(C24, C48, C72) %>%
-  pivot_longer(cols = everything(),
-               names_to = "time",
-               values_to = "C")
-
-p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
-  geom_hex(alpha = 0.75, bins = 41) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
-  labs(
-    x = "Mean Vancomycin concentration",
-    y = expression(Delta*"eGFR")
-  ) +
-  theme_minimal()
-
-grid.arrange(p1, p2, ncol = 2)
-grid.arrange(p3, p2, ncol = 2)
-
 ## POPULATION VERSTEHEN --------------------------------------------------------
 ## Graphik: Alter, Größe & Gewicht mit Geschlechtsunterscheidung
 df <- data.frame(
@@ -108,166 +59,6 @@ ggplot(long, aes(x = value, color = gender)) +
 
 ## BEREICH NIERE ---------------------------------------------------------------
 
-## Graphik: Scatterplots SCr x C Vergleich 24, 48, 72h (ersetzt durch unten)
-dat$nephrotox <- ifelse(
-  rowSums(dat[, c("ACEI","ARB","Aminoglycosides","Loop",
-                  "NSAID","PipTaz","Vasopressors")] == "yes",
-          na.rm = TRUE) > 0,
-  "ja","nein"
-)
-
-p1 <- ggplot(
-  dat, aes(x = C24, y = SCr24, color = nephrotox)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C24 vs. SCr24",
-    x = "C24",
-    y = "SCr24",
-  ) +
-  geom_smooth(method = "lm") + 
-  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
-
-p2 <- ggplot(
-  dat, aes(x = C48, y = SCr48, color = nephrotox)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C48 vs. SCr48",
-    x = "C48",
-    y = "SCr48",
-  ) +
-  geom_smooth(method = "lm") + 
-  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
-
-p3 <- ggplot(
-  dat, aes(x = C72, y = SCr72, color = nephrotox)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C72 vs. SCr72",
-    x = "C72",
-    y = "SCr72",
-  ) +
-  geom_smooth(method = "lm") + 
-  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
-
-grid.arrange(p1, p2, p3, ncol = 3)
-## ---------------------------------------------------
-
-## Graphik: Auswirkung von erster Vancomycingabe auf Nierenmarker
-dat$deltaSCr <- dat$SCr72 - dat$SCrStart
-
-p1 <- ggplot(dat, aes(C24, deltaSCr, color = nephrotox)) +
-  geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm") +
-  labs(x="C24", y="ΔSCr")
-
-dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
-
-p2 <- ggplot(dat, aes(C24, deltaeGFR, color = nephrotox)) +
-  geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm") +
-  labs(x="C24", y="ΔeGFR")
-
-grid.arrange(p1, p2, ncol = 2)
-## --------------------------------------------------------------
-
-## Graphik: Scatterplots eGFR x C Vergleich 24, 48, 72h (ersetzt durch oben)
-dat$nephrotox <- ifelse(
-  rowSums(dat[, c("ACEI","ARB","Aminoglycosides","Loop",
-                  "NSAID","PipTaz","Vasopressors")] == "yes",
-          na.rm = TRUE) > 0,
-  "ja","nein"
-)
-
-p1b <- ggplot(
-  dat, aes(x = C24, y = eGFR24)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C24 vs. eGFR24",
-    x = "C24",
-    y = "eGFR24",
-  ) +
-  geom_smooth(method = "lm")
-
-p2b <- ggplot(
-  dat, aes(x = C48, y = eGFR48)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C48 vs. eGFR48",
-    x = "C48",
-    y = "eGFR48",
-  ) +
-  geom_smooth(method = "lm")
-
-p3b <- ggplot(
-  dat, aes(x = C72, y = eGFR72)) +
-  geom_point() +
-  labs(
-    title = "Scatterplot C72 vs. eGFR72",
-    x = "C72",
-    y = "eGFR72",
-  ) +
-  geom_smooth(method = "lm")
-
-grid.arrange(p1b, p2b, p3b, ncol = 3)
-## ----------------------------------------------------
-
-## Graphik: Verschlechtern Nephrotoxine die Niere?
-df <- data.frame(
-  c24 = dat$C24,
-  scr24 = dat$SCr24,
-  c48 = dat$C48,
-  scr48 = dat$SCr48,
-  c72 = dat$C72,
-  scr72 = dat$SCr72,
-  acei = dat$ACEI,
-  arb = dat$ARB,
-  aminoglycosides = dat$Aminoglycosides,
-  loop = dat$Loop,
-  nsaid = dat$NSAID,
-  piptaz = dat$PipTaz,
-  vasopressors = dat$Vasopressors
-)
-
-dat$nephrotox <- ifelse(
-  rowSums(df[, c("acei","arb","aminoglycosides","loop",
-                 "nsaid","piptaz","vasopressors")] == "yes",
-          na.rm = TRUE) > 0,
-  "ja","nein"
-)
-
-dat$deltaSCr <- dat$SCr72 - dat$SCrStart
-
-ggplot(dat, aes(nephrotox, deltaSCr)) +
-  geom_boxplot() +
-  geom_jitter(alpha = 0.05)
-## -----------------------------------------------
-
-## Graphik: Wurden älteren Patienten häufiger Nephrotoxine verabreicht?
-dfalterNephro <- data.frame(
-  alter = dat$Birthdate,
-  acei = dat$ACEI,
-  arb = dat$ARB,
-  aminoglycosides = dat$Aminoglycosides,
-  loop = dat$Loop,
-  nsaid = dat$NSAID,
-  piptaz = dat$PipTaz,
-  vasopressors = dat$Vasopressors
-)
-
-dfalterNephro$alter <- as.numeric(difftime(Sys.Date(),
-                                           as.Date(dfalterNephro$alter),
-                                           units = "days"))/365.25
-
-long <- pivot_longer(dfalterNephro,
-                     cols = -alter,
-                     names_to = "medikament",
-                     values_to = "gegeben")
-
-ggplot(long, aes(x = factor(gegeben), y = alter)) +
-  geom_boxplot() +
-  facet_wrap(~ medikament)
-## --------------------------------------------------------------------
-
 ## Beziehung zwischen SCr und eGFR
 opar <- par(mar = c(4.1, 4.1, 2.1, 2.1), mfrow = c(1, 1))
 par(mar=c(0,0,0,0))
@@ -289,80 +80,106 @@ corrplot(cor(dat_kidney, use = "complete.obs"),
 par(opar)
 ## -------------------------------
 
-## Graphik: Verteilung des Unterschieds zwischen SCrStart und SCr72
+## Auswirkung vom durchschnittl. Vancomycin-Spiegel auf Nierenmarker
+dat$C_mean <- rowMeans(dat[,c("C24","C48","C72")], na.rm=TRUE)
 dat$deltaSCr <- dat$SCr72 - dat$SCrStart
+dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
 
-dens <- density(na.omit(dat$deltaSCr), bw = "nrd0", adjust = 1, 
-                kernel = "gaussian")
-plot(dens, main = "SCr-Verteilung SCr72 - SCrStart", xlab = "deltaSCr", 
-     ylab = "density")
-rug(dat$deltaSCr)
-## ----------------------------------------------------------------
+ggplot(longC, aes(time, C)) +
+  geom_boxplot()
+
+longC <- dat %>%
+  select(C24, C48, C72) %>%
+  pivot_longer(cols = everything(),
+               names_to = "time",
+               values_to = "C")
+
+p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = expression(bar(C)),
+    y = expression(Delta*"SCr")
+  ) +
+  theme_minimal()
+
+p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = expression(bar(C)),
+    y = expression(Delta*"eGFR")
+  ) +
+  theme_minimal()
+
+longC <- dat %>%
+  select(C24, C48, C72) %>%
+  pivot_longer(cols = everything(),
+               names_to = "time",
+               values_to = "C")
+
+p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    x = expression(bar(C)),
+    y = expression(Delta*"eGFR")
+  ) +
+  theme_minimal()
+
+grid.arrange(p1, p2, ncol = 2)
+grid.arrange(p3, p2, ncol = 2)
+## -----------------------------------------------------------------
 ## -----------------------------------------------------------------------------
 
 ################################################################################
 
 ## BEREICH MORTALITÄTSANALYSE --------------------------------------------------
 
-## Graphik: Welche Indikationen haben welche Mortalitätsraten?
-dfMortInd <- data.frame(
-  mortality = dat$Mortalitydate,
-  sepsis = dat$Sepsis,
-  schock = dat$Schock,
-  bacteraemia = dat$Bacteraemia,
-  catheter = dat$Catheter,
-  bji = dat$BJI,
-  endocarditis = dat$Endocarditis,
-  cns = dat$CNS,
-  gastrointestinal = dat$Gastrointestinal,
-  genitourinary = dat$Genitourinary,
-  pulmonary = dat$Pulmonary,
-  ssti = dat$SSTI
-)
+## Graphik: Schweregrad der Erkrankung 
+#Mortalität abhängig vom Schweregrad der Erkrankung, Subtitel: (Messwerte zu Beginn der Therapie)
+# bitte über den Graphik aufschreiben
+dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebt","Gestorben")
 
-dfMortInd$mortality_status <- ifelse(is.na(dfMortInd$mortality),"alive","dead")
+my_colors <- c("Lebt" = "#4DBBD5",
+               "Gestorben" = "#E64B35")
 
-long <- pivot_longer(dfMortInd,
-                     cols = -c(mortality, mortality_status),
-                     names_to = "indikation",
-                     values_to = "vorhanden")
 
-summary <- long %>%
-  filter(vorhanden == "yes") %>%
-  group_by(indikation) %>%
-  summarise(mort_rate = mean(mortality_status=="dead"))
+p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "SOFA (aus 24P)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
-ggplot(summary, aes(indikation, mort_rate)) +
-  geom_col()
-## -----------------------------------------------------------
+p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "SAPS") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
-## Graphik: Welche Komorbiditäten begleiten die Mortalität am meisten?
-dfMortKom <- data.frame(
-  mortality = dat$Mortalitydate,
-  cardiovascular = dat$Cardiovascular,
-  hypertension = dat$Hypertension,
-  chf = dat$CHF,
-  ckd = dat$CKD,
-  copd = dat$COPD,
-  dm = dat$DM,
-  malignacy = dat$Malignancy
-)
+p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "Leukozyten (nL)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
-dfMortKom$mortality_status <- ifelse(is.na(dfMortKom$mortality),"alive","dead")
+p4 <- ggplot(dat, aes(mortality_status, CRP)) +
+  geom_boxplot() +
+  labs(x = "Lebenstatus", y = "CRP (mg/dL)") +  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
-long <- pivot_longer(dfMortKom,
-                     cols = -c(mortality, mortality_status),
-                     names_to = "comorbidity",
-                     values_to = "vorhanden")
-
-summary <- long %>%
-  filter(vorhanden == "yes") %>%
-  group_by(comorbidity) %>%
-  summarise(mort_rate = mean(mortality_status=="dead"))
-
-ggplot(summary, aes(comorbidity, mort_rate)) +
-  geom_col()
-## -------------------------------------------------------------------
+grid.arrange(
+  p1, p2, p3, p4,
+  ncol = 2)
+## -----------------------------------
 
 ## Graphik: Welche Komorbiditäten begleiten die Mortalität am meisten?
 dfKomor <- data.frame(
@@ -438,7 +255,7 @@ ggplot() +
   theme_minimal()
 ## -------------------------------------------------------------------
 
-## Graphik: Welche Nephrotoxingaben begleiten die Mortalität am meisten?
+## Graphik: Welche Nephrotoxine begleiten die Mortalität am meisten?
 dfToxinen <- data.frame(
   acei = dat$ACEI,
   ARB = dat$ARB,
@@ -515,61 +332,158 @@ ggplot() +
   labs(x = "Nephrotoxin", fill = "Status") +
   theme_minimal()
 ## ---------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 
-## Graphik: Schweregrad der Erkrankung 
-#Mortalität abhängig vom Schweregrad der Erkrankung, Subtitel: (Messwerte zu Beginn der Therapie)
-# bitte über den Graphik aufschreiben
-dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebt","Gestorben")
+## SCRAPPED --------------------------------------------------------------------
 
-my_colors <- c("Lebt" = "#4DBBD5",
-               "Gestorben" = "#E64B35")
+## Graphik: Welche Indikationen haben welche Mortalitätsraten?
+dfMortInd <- data.frame(
+  mortality = dat$Mortalitydate,
+  sepsis = dat$Sepsis,
+  schock = dat$Schock,
+  bacteraemia = dat$Bacteraemia,
+  catheter = dat$Catheter,
+  bji = dat$BJI,
+  endocarditis = dat$Endocarditis,
+  cns = dat$CNS,
+  gastrointestinal = dat$Gastrointestinal,
+  genitourinary = dat$Genitourinary,
+  pulmonary = dat$Pulmonary,
+  ssti = dat$SSTI
+)
 
+dfMortInd$mortality_status <- ifelse(is.na(dfMortInd$mortality),"alive","dead")
 
-p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
-  geom_boxplot() +
-  labs(x = "Lebenstatus", y = "SOFA (aus 24P)") +
-  aes(fill = mortality_status) +
-  scale_fill_manual(values = my_colors) +
-  theme_minimal() +
-  theme(legend.position = "none")
+long <- pivot_longer(dfMortInd,
+                     cols = -c(mortality, mortality_status),
+                     names_to = "indikation",
+                     values_to = "vorhanden")
 
-p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
-  geom_boxplot() +
-  labs(x = "Lebenstatus", y = "SAPS") +
-  aes(fill = mortality_status) +
-  scale_fill_manual(values = my_colors) +
-  theme_minimal() +
-  theme(legend.position = "none")
+summary <- long %>%
+  filter(vorhanden == "yes") %>%
+  group_by(indikation) %>%
+  summarise(mort_rate = mean(mortality_status=="dead"))
 
-p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
-  geom_boxplot() +
-  labs(x = "Lebenstatus", y = "Leukozyten (nL)") +
-  aes(fill = mortality_status) +
-  scale_fill_manual(values = my_colors) +
-  theme_minimal() +
-  theme(legend.position = "none")
+ggplot(summary, aes(indikation, mort_rate)) +
+  geom_col()
+## -----------------------------------------------------------
 
-p4 <- ggplot(dat, aes(mortality_status, CRP)) +
-  geom_boxplot() +
-  labs(x = "Lebenstatus", y = "CRP (mg/dL)") +  aes(fill = mortality_status) +
-  scale_fill_manual(values = my_colors) +
-  theme_minimal() +
-  theme(legend.position = "none")
+## Graphik: Scatterplots SCr x C Vergleich 24, 48, 72h
+dat$nephrotox <- ifelse(
+  rowSums(dat[, c("ACEI","ARB","Aminoglycosides","Loop",
+                  "NSAID","PipTaz","Vasopressors")] == "yes",
+          na.rm = TRUE) > 0,
+  "ja","nein"
+)
 
-grid.arrange(
-  p1, p2, p3, p4,
-  ncol = 2)
-## -----------------------------------
+p1 <- ggplot(
+  dat, aes(x = C24, y = SCr24, color = nephrotox)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C24 vs. SCr24",
+    x = "C24",
+    y = "SCr24",
+  ) +
+  geom_smooth(method = "lm") + 
+  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
 
-## Graphik: Mortalität nach Alter
-dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"alive","dead")
-dat$age <- as.numeric(difftime(Sys.Date(),
-                               as.Date(dat$Birthdate),
-                               units = "days"))/365.25
+p2 <- ggplot(
+  dat, aes(x = C48, y = SCr48, color = nephrotox)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C48 vs. SCr48",
+    x = "C48",
+    y = "SCr48",
+  ) +
+  geom_smooth(method = "lm") + 
+  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
 
-ggplot(dat, aes(mortality_status, age)) +
-  geom_violin()
-## ------------------------------
+p3 <- ggplot(
+  dat, aes(x = C72, y = SCr72, color = nephrotox)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C72 vs. SCr72",
+    x = "C72",
+    y = "SCr72",
+  ) +
+  geom_smooth(method = "lm") + 
+  scale_color_manual(values = c("nein" = "#5ac9c7", "ja" = "#ec5b5b"))
+
+grid.arrange(p1, p2, p3, ncol = 3)
+## ---------------------------------------------------
+
+## Graphik: Auswirkung von erster Vancomycingabe auf Nierenmarker
+dat$deltaSCr <- dat$SCr72 - dat$SCrStart
+
+p1 <- ggplot(dat, aes(C24, deltaSCr, color = nephrotox)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm") +
+  labs(x="C24", y="ΔSCr")
+
+dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
+
+p2 <- ggplot(dat, aes(C24, deltaeGFR, color = nephrotox)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm") +
+  labs(x="C24", y="ΔeGFR")
+
+grid.arrange(p1, p2, ncol = 2)
+## --------------------------------------------------------------
+
+## Graphik: Scatterplots eGFR x C Vergleich 24, 48, 72h
+dat$nephrotox <- ifelse(
+  rowSums(dat[, c("ACEI","ARB","Aminoglycosides","Loop",
+                  "NSAID","PipTaz","Vasopressors")] == "yes",
+          na.rm = TRUE) > 0,
+  "ja","nein"
+)
+
+p1b <- ggplot(
+  dat, aes(x = C24, y = eGFR24)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C24 vs. eGFR24",
+    x = "C24",
+    y = "eGFR24",
+  ) +
+  geom_smooth(method = "lm")
+
+p2b <- ggplot(
+  dat, aes(x = C48, y = eGFR48)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C48 vs. eGFR48",
+    x = "C48",
+    y = "eGFR48",
+  ) +
+  geom_smooth(method = "lm")
+
+p3b <- ggplot(
+  dat, aes(x = C72, y = eGFR72)) +
+  geom_point() +
+  labs(
+    title = "Scatterplot C72 vs. eGFR72",
+    x = "C72",
+    y = "eGFR72",
+  ) +
+  geom_smooth(method = "lm")
+
+grid.arrange(p1b, p2b, p3b, ncol = 3)
+## ----------------------------------------------------
+
+## Graphik: Korrelation zwischen Dosen
+dat_dosis <- data.frame(
+  c24 = dat$C24,
+  c48 = dat$C48,
+  c72 = dat$C72,
+  md24 = dat$MD24,
+  md48 = dat$MD48,
+  md72 = dat$MD72,
+  ld = dat$LD
+)
+
+corrplot(cor(dat_dosis, use="complete.obs"))
+## ------------------------------------
 
 ## Graphik: Altersverteilung nach Vancomycindosis pro Körpergewicht (Mortalität)
 dfAgeVanc <- data.frame(
@@ -622,25 +536,110 @@ p3 <- ggplot(
 grid.arrange(p1, p2, p3, ncol = 3)
 ## -----------------------------------------------------------------------------
 
+## Graphik: Mortalität nach Alter
+dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"alive","dead")
+dat$age <- as.numeric(difftime(Sys.Date(),
+                               as.Date(dat$Birthdate),
+                               units = "days"))/365.25
 
+ggplot(dat, aes(mortality_status, age)) +
+  geom_violin()
+## ------------------------------
 
-## -----------------------------------------------------------------------------
+## Graphik: Verteilung des Unterschieds zwischen SCrStart und SCr72
+dat$deltaSCr <- dat$SCr72 - dat$SCrStart
 
-## BEREICH DOSIS-WIRKUNG -------------------------------------------------------
+dens <- density(na.omit(dat$deltaSCr), bw = "nrd0", adjust = 1, 
+                kernel = "gaussian")
+plot(dens, main = "SCr-Verteilung SCr72 - SCrStart", xlab = "deltaSCr", 
+     ylab = "density")
+rug(dat$deltaSCr)
+## ----------------------------------------------------------------
 
-## Graphik: Korrelation zwischen Dosen
-dat_dosis <- data.frame(
+## Graphik: Verschlechtern Nephrotoxine die Niere?
+df <- data.frame(
   c24 = dat$C24,
+  scr24 = dat$SCr24,
   c48 = dat$C48,
+  scr48 = dat$SCr48,
   c72 = dat$C72,
-  md24 = dat$MD24,
-  md48 = dat$MD48,
-  md72 = dat$MD72,
-  ld = dat$LD
+  scr72 = dat$SCr72,
+  acei = dat$ACEI,
+  arb = dat$ARB,
+  aminoglycosides = dat$Aminoglycosides,
+  loop = dat$Loop,
+  nsaid = dat$NSAID,
+  piptaz = dat$PipTaz,
+  vasopressors = dat$Vasopressors
 )
 
-corrplot(cor(dat_dosis, use="complete.obs"))
-## -----------------------------------
+dat$nephrotox <- ifelse(
+  rowSums(df[, c("acei","arb","aminoglycosides","loop",
+                 "nsaid","piptaz","vasopressors")] == "yes",
+          na.rm = TRUE) > 0,
+  "ja","nein"
+)
+
+dat$deltaSCr <- dat$SCr72 - dat$SCrStart
+
+ggplot(dat, aes(nephrotox, deltaSCr)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.05)
+## -----------------------------------------------
+
+## Graphik: Wurden älteren Patienten häufiger Nephrotoxine verabreicht?
+dfalterNephro <- data.frame(
+  alter = dat$Birthdate,
+  acei = dat$ACEI,
+  arb = dat$ARB,
+  aminoglycosides = dat$Aminoglycosides,
+  loop = dat$Loop,
+  nsaid = dat$NSAID,
+  piptaz = dat$PipTaz,
+  vasopressors = dat$Vasopressors
+)
+
+dfalterNephro$alter <- as.numeric(difftime(Sys.Date(),
+                                           as.Date(dfalterNephro$alter),
+                                           units = "days"))/365.25
+
+long <- pivot_longer(dfalterNephro,
+                     cols = -alter,
+                     names_to = "medikament",
+                     values_to = "gegeben")
+
+ggplot(long, aes(x = factor(gegeben), y = alter)) +
+  geom_boxplot() +
+  facet_wrap(~ medikament)
+## --------------------------------------------------------------------
+
+## Graphik: Welche Komorbiditäten begleiten die Mortalität am meisten?
+dfMortKom <- data.frame(
+  mortality = dat$Mortalitydate,
+  cardiovascular = dat$Cardiovascular,
+  hypertension = dat$Hypertension,
+  chf = dat$CHF,
+  ckd = dat$CKD,
+  copd = dat$COPD,
+  dm = dat$DM,
+  malignacy = dat$Malignancy
+)
+
+dfMortKom$mortality_status <- ifelse(is.na(dfMortKom$mortality),"alive","dead")
+
+long <- pivot_longer(dfMortKom,
+                     cols = -c(mortality, mortality_status),
+                     names_to = "comorbidity",
+                     values_to = "vorhanden")
+
+summary <- long %>%
+  filter(vorhanden == "yes") %>%
+  group_by(comorbidity) %>%
+  summarise(mort_rate = mean(mortality_status=="dead"))
+
+ggplot(summary, aes(comorbidity, mort_rate)) +
+  geom_col()
+## -------------------------------------------------------------------
 
 
 
