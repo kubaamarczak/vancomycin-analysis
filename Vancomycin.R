@@ -320,12 +320,15 @@ ggplot() +
   ) +
   labs(x = "Komorbidität", fill = "Status") +
   theme_minimal() +
-  theme( axis.title.y = element_text(size = 15),
-         axis.title.y.right = element_text(size = 15),
-         axis.text.y = element_text(size = 13),
-         axis.text.y.right = element_text(size = 13),
-         axis.title.x = element_text(size = 15),
-         axis.text.x = element_text(size = 13)
+  theme( axis.title.y = element_text(size = 17),
+         axis.title.y.right = element_text(size = 17),
+         axis.text.y = element_text(size = 15),
+         axis.text.y.right = element_text(size = 15),
+         axis.title.x = element_text(size = 17),
+         axis.text.x = element_text(size = 15),
+         
+         legend.title = element_text(size = 17),
+         legend.text  = element_text(size = 15)
   )
 ## -------------------------------------------------------------------
 
@@ -406,12 +409,15 @@ ggplot() +
   ) +
   labs(x = "Nephrotoxin", fill = "Status") +
   theme_minimal() +
-  theme( axis.title.y = element_text(size = 15),
-        axis.title.y.right = element_text(size = 15),
+  theme( axis.title.y = element_text(size = 17),
+        axis.title.y.right = element_text(size = 17),
         axis.text.y = element_text(size = 15),
-        axis.text.y.right = element_text(size = 13),
-        axis.title.x = element_text(size = 15),
-        axis.text.x = element_text(size = 13)
+        axis.text.y.right = element_text(size = 15),
+        axis.title.x = element_text(size = 17),
+        axis.text.x = element_text(size = 15),
+        
+        legend.title = element_text(size = 17),
+        legend.text  = element_text(size = 15)
     ) 
   
 ## ---------------------------------------------------------------------
