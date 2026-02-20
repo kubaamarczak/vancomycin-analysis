@@ -317,12 +317,12 @@ ggplot() +
   ) +
   labs(x = "Komorbidität", fill = "Status") +
   theme_minimal() +
-  theme( axis.title.y = element_text(size = 12),
-         axis.title.y.right = element_text(size = 12),
-         axis.text.y = element_text(size = 10),
-         axis.text.y.right = element_text(size = 10),
-         axis.title.x = element_text(size = 12),
-         axis.text.x = element_text(size = 10)
+  theme( axis.title.y = element_text(size = 15),
+         axis.title.y.right = element_text(size = 15),
+         axis.text.y = element_text(size = 13),
+         axis.text.y.right = element_text(size = 13),
+         axis.title.x = element_text(size = 15),
+         axis.text.x = element_text(size = 13)
   )
 ## -------------------------------------------------------------------
 
@@ -403,12 +403,12 @@ ggplot() +
   ) +
   labs(x = "Nephrotoxin", fill = "Status") +
   theme_minimal() +
-  theme( axis.title.y = element_text(size = 12),
-        axis.title.y.right = element_text(size = 12),
-        axis.text.y = element_text(size = 10),
-        axis.text.y.right = element_text(size = 10),
-        axis.title.x = element_text(size = 12),
-        axis.text.x = element_text(size = 10)
+  theme( axis.title.y = element_text(size = 15),
+        axis.title.y.right = element_text(size = 15),
+        axis.text.y = element_text(size = 13),
+        axis.text.y.right = element_text(size = 13),
+        axis.title.x = element_text(size = 15),
+        axis.text.x = element_text(size = 13)
     ) 
   
 ## ---------------------------------------------------------------------
