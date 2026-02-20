@@ -655,12 +655,10 @@ ggplot(summary, aes(comorbidity, mort_rate)) +
 ## GRAPHIKEN - Mortalitätsanalyse (Nermine Msolly)
 ################################################################################
 
+## GRAPHIK 7: Therapiedauer nach Mortalitätsstatus -----------------------------
 
-my_colors <- c("Lebt" = "#4DBBD5", "Gestorben" = "#E64B35")
-
-################################################################################
-## GRAPHIK7 Therapiedauer nach Mortalitätsstatus
-################################################################################
+# حسب mortality_status قبل الفلتر
+dat$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
 
 dat <- dat %>%
   mutate(
@@ -687,26 +685,20 @@ g_duration <- ggplot(dat, aes(x = mortality_status, y = Therapiedauer, fill = mo
     y        = "Therapiedauer (Tage)"
   ) +
   theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "none",
-    plot.title      = element_text(face = "bold")
-  )
+  theme(legend.position = "none",
+        plot.title      = element_text(face = "bold"))
 
 print(g_duration)
 
-################################################################################
-## GRAPHIK 8: Mortalitätsrate nach C24-Quartilen
-################################################################################
+## GRAPHIK 8: Mortalitätsrate nach C24-Quartilen -------------------------------
 
 dat_c24 <- dat %>%
   filter(!is.na(C24)) %>%
   mutate(
-    C24_Quartil = factor(
-      ntile(C24, 4),
-      levels = 1:4,
-      labels = c("Q1 (niedrig)", "Q2", "Q3", "Q4 (hoch)")
-    ),
-    gestorben = mortality_status == "Gestorben"
+    C24_Quartil = factor(ntile(C24, 4),
+                         levels = 1:4,
+                         labels = c("Q1 (niedrig)", "Q2", "Q3", "Q4 (hoch)")),
+    gestorben   = mortality_status == "Gestorben"
   ) %>%
   group_by(C24_Quartil) %>%
   summarise(
@@ -717,21 +709,16 @@ dat_c24 <- dat %>%
 
 g_c24 <- ggplot(dat_c24, aes(x = C24_Quartil, y = Mortalitaetsrate, fill = C24_Quartil)) +
   geom_col(alpha = 0.9, width = 0.62) +
-  geom_text(
-    aes(label = paste0(percent(Mortalitaetsrate, accuracy = 0.1), "\n(n=", n, ")")),
-    vjust = -0.35,
-    size  = 4
-  ) +
+  geom_text(aes(label = paste0(percent(Mortalitaetsrate, accuracy = 0.1), "\n(n=", n, ")")),
+            vjust = -0.35, size = 4) +
   scale_fill_manual(values = c(
     "Q1 (niedrig)" = "#4DBBD5",
     "Q2"           = "#90D4E0",
     "Q3"           = "#F4A460",
     "Q4 (hoch)"    = "#E64B35"
   )) +
-  scale_y_continuous(
-    labels = percent_format(accuracy = 1),
-    expand = expansion(mult = c(0, 0.12))
-  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1),
+                     expand = expansion(mult = c(0, 0.12))) +
   labs(
     title    = "Mortalitätsrate nach Vancomycin-Serumspiegel (C24)",
     subtitle = "Einteilung der Patienten in Quartile des C24-Spiegels",
@@ -739,10 +726,8 @@ g_c24 <- ggplot(dat_c24, aes(x = C24_Quartil, y = Mortalitaetsrate, fill = C24_Q
     y        = "Mortalitätsrate"
   ) +
   theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "none",
-    plot.title      = element_text(face = "bold")
-  )
+  theme(legend.position = "none",
+        plot.title      = element_text(face = "bold"))
 
 print(g_c24)
 
