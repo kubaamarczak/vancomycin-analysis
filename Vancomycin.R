@@ -50,6 +50,7 @@ ggplot(long, aes(x = value, color = gender)) +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   theme_minimal() + theme(
     text = element_text(size = 20),
+    text = element_text(size = 18),
     axis.title = element_text(size = 18),
     plot.title = element_text(size = 24)
   )
@@ -105,7 +106,7 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
     
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 16),
+  theme(text = element_text(size = 18),
         axis.title = element_text(size = 16))
 
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
@@ -117,7 +118,7 @@ p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 16),
+  theme(text = element_text(size = 18),
         axis.title = element_text(size = 16))
 
 longC <- dat %>%
@@ -135,7 +136,7 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 16),
+  theme(text = element_text(size = 18),
         axis.title = element_text(size = 16))
 
 grid.arrange(p1, p2, ncol = 2)
