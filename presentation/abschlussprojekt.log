@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1242,29 +1242,29 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 40--40
+Overfull \hbox (55.948pt too wide) in paragraph at lines 45--45
  [][]  
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 40
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 45
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 40.
+ut line 45.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1277,14 +1277,14 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [2
 
 ]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 50--50
+Overfull \hbox (55.948pt too wide) in paragraph at lines 55--55
  [][]  
  []
 
-<population.png, id=49, 2651.9075pt x 1373.13pt>
+<population.png, id=52, 2651.9075pt x 1373.13pt>
 File: population.png Graphic file (type png)
 <use population.png>
-Package pdftex.def Info: population.png  used on input line 50.
+Package pdftex.def Info: population.png  used on input line 55.
 (pdftex.def)             Requested size: 342.43532pt x 177.29793pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1294,14 +1294,14 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [3
 
  <./population.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 60--60
+Overfull \hbox (55.948pt too wide) in paragraph at lines 65--65
  [][]  
  []
 
-<corrplot nierenmarker.jpeg, id=60, 1176.395pt x 1057.9525pt>
+<corrplot nierenmarker.jpeg, id=62, 1176.395pt x 1057.9525pt>
 File: corrplot nierenmarker.jpeg Graphic file (type jpg)
 <use corrplot nierenmarker.jpeg>
-Package pdftex.def Info: corrplot nierenmarker.jpeg  used on input line 60.
+Package pdftex.def Info: corrplot nierenmarker.jpeg  used on input line 65.
 (pdftex.def)             Requested size: 205.46327pt x 184.77316pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1311,14 +1311,14 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [4
 
  <./corrplot nierenmarker.jpeg>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 70--70
+Overfull \hbox (55.948pt too wide) in paragraph at lines 75--75
  [][]  
  []
 
-<ZhSCreGFR.png, id=68, 2858.68pt x 1186.4325pt>
+<ZhSCreGFR.png, id=70, 2858.68pt x 1186.4325pt>
 File: ZhSCreGFR.png Graphic file (type png)
 <use ZhSCreGFR.png>
-Package pdftex.def Info: ZhSCreGFR.png  used on input line 70.
+Package pdftex.def Info: ZhSCreGFR.png  used on input line 75.
 (pdftex.def)             Requested size: 342.43532pt x 142.1123pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1328,14 +1328,14 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [5
 
  <./ZhSCreGFR.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 80--80
+Overfull \hbox (55.948pt too wide) in paragraph at lines 85--85
  [][]  
  []
 
-<HexScat.png, id=79, 2858.68pt x 1186.4325pt>
+<HexScat.png, id=81, 2858.68pt x 1186.4325pt>
 File: HexScat.png Graphic file (type png)
 <use HexScat.png>
-Package pdftex.def Info: HexScat.png  used on input line 80.
+Package pdftex.def Info: HexScat.png  used on input line 85.
 (pdftex.def)             Requested size: 342.43532pt x 142.1123pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1345,17 +1345,17 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 [6
 
  <./HexScat.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 90--90
+Overfull \hbox (55.948pt too wide) in paragraph at lines 95--95
  [][]  
  []
 
-<Boxplot Lebenstatus.png, id=88, 1405.25pt x 1003.75pt>
-File: Boxplot Lebenstatus.png Graphic file (type png)
-<use Boxplot Lebenstatus.png>
-Package pdftex.def Info: Boxplot Lebenstatus.png  used on input line 90.
-(pdftex.def)             Requested size: 239.70367pt x 171.21724pt.
+<Niere x Van-Spie.png, id=90, 1204.5pt x 803.0pt>
+File: Niere x Van-Spie.png Graphic file (type png)
+<use Niere x Van-Spie.png>
+Package pdftex.def Info: Niere x Van-Spie.png  used on input line 95.
+(pdftex.def)             Requested size: 273.9493pt x 182.62764pt.
 
-Overfull \vbox (8.9527pt too high) detected at line 90
+Overfull \vbox (2.3631pt too high) detected at line 95
  []
 
 
@@ -1365,18 +1365,18 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [7
 
- <./Boxplot Lebenstatus.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 100--100
+ <./Niere x Van-Spie.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 105--105
  [][]  
  []
 
-<Komor x Mort.png, id=98, 1606.0pt x 903.375pt>
-File: Komor x Mort.png Graphic file (type png)
-<use Komor x Mort.png>
-Package pdftex.def Info: Komor x Mort.png  used on input line 100.
-(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
+<Lbst x Score.png, id=100, 1405.25pt x 1003.75pt>
+File: Lbst x Score.png Graphic file (type png)
+<use Lbst x Score.png>
+Package pdftex.def Info: Lbst x Score.png  used on input line 105.
+(pdftex.def)             Requested size: 239.70367pt x 171.21724pt.
 
-Overfull \vbox (9.85892pt too high) detected at line 100
+Overfull \vbox (8.9527pt too high) detected at line 105
  []
 
 
@@ -1386,18 +1386,18 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [8
 
- <./Komor x Mort.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 110--110
+ <./Lbst x Score.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 115--115
  [][]  
  []
 
-<Nephro x Mort 2.png, id=107, 1606.0pt x 903.375pt>
-File: Nephro x Mort 2.png Graphic file (type png)
-<use Nephro x Mort 2.png>
-Package pdftex.def Info: Nephro x Mort 2.png  used on input line 110.
-(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
+<Van-Spie x Strt.png, id=109, 1204.5pt x 903.375pt>
+File: Van-Spie x Strt.png Graphic file (type png)
+<use Van-Spie x Strt.png>
+Package pdftex.def Info: Van-Spie x Strt.png  used on input line 115.
+(pdftex.def)             Requested size: 249.97632pt x 187.48128pt.
 
-Overfull \vbox (11.80289pt too high) detected at line 110
+Overfull \vbox (4.71735pt too high) detected at line 115
  []
 
 
@@ -1407,17 +1407,16 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [9
 
- <./Nephro x Mort 2.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 120--120
+ <./Van-Spie x Strt.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 125--125
  [][]  
  []
 
-<therapiedauer_mortalitaet.png, id=116, 722.7pt x 433.62pt>
-File: therapiedauer_mortalitaet.png Graphic file (type png)
-<use therapiedauer_mortalitaet.png>
-Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 120.
-
-(pdftex.def)             Requested size: 291.0721pt x 174.6425pt.
+<Komor x Mort 3.png, id=118, 1606.0pt x 1003.75pt>
+File: Komor x Mort 3.png Graphic file (type png)
+<use Komor x Mort 3.png>
+Package pdftex.def Info: Komor x Mort 3.png  used on input line 125.
+(pdftex.def)             Requested size: 291.0721pt x 181.92311pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1425,17 +1424,20 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [10
 
- <./therapiedauer_mortalitaet.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 130--130
+ <./Komor x Mort 3.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 135--135
  [][]  
  []
 
-<mortalitaetsrate_c24_quartile.png, id=124, 722.7pt x 433.62pt>
-File: mortalitaetsrate_c24_quartile.png Graphic file (type png)
-<use mortalitaetsrate_c24_quartile.png>
-Package pdftex.def Info: mortalitaetsrate_c24_quartile.png  used on input line 
-130.
-(pdftex.def)             Requested size: 291.0721pt x 174.6425pt.
+<Nephro x Mort 3.png, id=127, 1606.0pt x 1003.75pt>
+File: Nephro x Mort 3.png Graphic file (type png)
+<use Nephro x Mort 3.png>
+Package pdftex.def Info: Nephro x Mort 3.png  used on input line 135.
+(pdftex.def)             Requested size: 291.0721pt x 181.92311pt.
+
+Overfull \vbox (1.10315pt too high) detected at line 135
+ []
+
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1443,11 +1445,17 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [11
 
- <./mortalitaetsrate_c24_quartile.png>]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 135--135
+ <./Nephro x Mort 3.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 145--145
  [][]  
  []
 
+<therapiedauer_mortalitaet.png, id=136, 722.7pt x 433.62pt>
+File: therapiedauer_mortalitaet.png Graphic file (type png)
+<use therapiedauer_mortalitaet.png>
+Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 145.
+
+(pdftex.def)             Requested size: 291.0721pt x 174.6425pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1455,8 +1463,26 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [12
 
-]
-Overfull \hbox (55.948pt too wide) in paragraph at lines 153--153
+ <./therapiedauer_mortalitaet.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 155--155
+ [][]  
+ []
+
+<mortalitaetsrate_c24_quartile.png, id=144, 722.7pt x 433.62pt>
+File: mortalitaetsrate_c24_quartile.png Graphic file (type png)
+<use mortalitaetsrate_c24_quartile.png>
+Package pdftex.def Info: mortalitaetsrate_c24_quartile.png  used on input line 
+155.
+(pdftex.def)             Requested size: 291.0721pt x 174.6425pt.
+
+Overfull \hbox (55.948pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[13
+
+ <./mortalitaetsrate_c24_quartile.png>]
+Overfull \hbox (55.948pt too wide) in paragraph at lines 173--173
  [][]  
  []
 
@@ -1465,7 +1491,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
  []
 
-[13
+[14
 
 ]
 \tf@nav=\write7
@@ -1489,10 +1515,10 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30926 strings out of 474116
- 602248 string characters out of 5743682
- 1937187 words of memory out of 5000000
- 52693 multiletter control sequences out of 15000+600000
+ 30944 strings out of 474116
+ 602617 string characters out of 5743682
+ 1939187 words of memory out of 5000000
+ 52709 multiletter control sequences out of 15000+600000
  575478 words of font info for 86 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,15n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1503,10 +1529,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (13 pages, 1817594 bytes).
+Output written on abschlussprojekt.pdf (14 pages, 2026862 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
