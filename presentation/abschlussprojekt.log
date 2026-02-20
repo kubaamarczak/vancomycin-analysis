@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1281,11 +1281,10 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 55--55
  [][]  
  []
 
-<population verstehen gender.png, id=49, 2651.9075pt x 1373.13pt>
-File: population verstehen gender.png Graphic file (type png)
-<use population verstehen gender.png>
-Package pdftex.def Info: population verstehen gender.png  used on input line 55
-.
+<population.png, id=49, 2651.9075pt x 1373.13pt>
+File: population.png Graphic file (type png)
+<use population.png>
+Package pdftex.def Info: population.png  used on input line 55.
 (pdftex.def)             Requested size: 342.43532pt x 177.29793pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
@@ -1294,7 +1293,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [3
 
- <./population verstehen gender.png>]
+ <./population.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 67--67
  [][]  
  []
@@ -1316,11 +1315,11 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 79--79
  [][]  
  []
 
-<vancomycin nierenmarker.png, id=68, 2304.61pt x 977.6525pt>
-File: vancomycin nierenmarker.png Graphic file (type png)
-<use vancomycin nierenmarker.png>
-Package pdftex.def Info: vancomycin nierenmarker.png  used on input line 79.
-(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
+<ZhSCreGFR.png, id=68, 2710.125pt x 1316.92pt>
+File: ZhSCreGFR.png Graphic file (type png)
+<use ZhSCreGFR.png>
+Package pdftex.def Info: ZhSCreGFR.png  used on input line 79.
+(pdftex.def)             Requested size: 342.43532pt x 166.38292pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1328,17 +1327,16 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [5
 
- <./vancomycin nierenmarker.png>]
+ <./ZhSCreGFR.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 91--91
  [][]  
  []
 
-<vancomycin nierenmarker vgl.png, id=79, 2304.61pt x 977.6525pt>
-File: vancomycin nierenmarker vgl.png Graphic file (type png)
-<use vancomycin nierenmarker vgl.png>
-Package pdftex.def Info: vancomycin nierenmarker vgl.png  used on input line 91
-.
-(pdftex.def)             Requested size: 342.43532pt x 145.2542pt.
+<HexScat.png, id=79, 2710.125pt x 1316.92pt>
+File: HexScat.png Graphic file (type png)
+<use HexScat.png>
+Package pdftex.def Info: HexScat.png  used on input line 91.
+(pdftex.def)             Requested size: 342.43532pt x 166.38292pt.
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1346,7 +1344,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [6
 
- <./vancomycin nierenmarker vgl.png>]
+ <./HexScat.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 104--104
  [][]  
  []
@@ -1481,24 +1479,15 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `abschlussprojekt.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                abschlussprojekt
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 \openout1 = `abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  30919 strings out of 474116
- 602291 string characters out of 5743682
+ 601934 string characters out of 5743682
  1937187 words of memory out of 5000000
  52686 multiletter control sequences out of 15000+600000
  575478 words of font info for 86 fonts, out of 8000000 for 9000
@@ -1511,7 +1500,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (13 pages, 1403710 bytes).
+Output written on abschlussprojekt.pdf (13 pages, 1545855 bytes).
 PDF statistics:
  187 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams

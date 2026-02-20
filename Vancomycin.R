@@ -48,9 +48,9 @@ ggplot(long, aes(x = value, color = gender)) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   theme_minimal() + theme(
-    text = element_text(size = 14),
+    text = element_text(size = 19),
     axis.title = element_text(size = 16),
-    plot.title = element_text(size = 18)
+    plot.title = element_text(size = 24)
   )
 
 ##------------------------------------------------------------------------------
@@ -97,20 +97,25 @@ ggplot(longC, aes(time, C)) +
 p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
+  scale_fill_continuous(name = "Anzahl Patienten") +
   labs(
     x = expression(bar(C)),
-    y = expression(Delta*"SCr")
+    y = expression(Delta*"SCr"),
+    
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.title = element_text(size = 14))
 
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
+  scale_fill_continuous(name = "Anzahl Patienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.title = element_text(size = 14))
 
 longC <- dat %>%
   select(C24, C48, C72) %>%
@@ -121,11 +126,13 @@ longC <- dat %>%
 p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
+  scale_fill_continuous(name = "Anzahl Patienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.title = element_text(size = 14))
 
 grid.arrange(p1, p2, ncol = 2)
 grid.arrange(p3, p2, ncol = 2)
