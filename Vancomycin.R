@@ -151,7 +151,8 @@ p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
   aes(fill = mortality_status) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 11))
 
 p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   geom_boxplot() +
@@ -159,7 +160,8 @@ p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   aes(fill = mortality_status) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 11))
 
 p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   geom_boxplot() +
@@ -167,14 +169,16 @@ p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   aes(fill = mortality_status) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 11))
 
 p4 <- ggplot(dat, aes(mortality_status, CRP)) +
   geom_boxplot() +
   labs(x = "Lebenstatus", y = "CRP (mg/dL)") +  aes(fill = mortality_status) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 11))
 
 grid.arrange(
   p1, p2, p3, p4,
