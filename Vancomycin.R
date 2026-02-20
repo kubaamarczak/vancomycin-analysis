@@ -187,19 +187,19 @@ grid.arrange(
 
 ## Graphik: Welche Komorbiditäten begleiten die Mortalität am meisten?
 dfKomor <- data.frame(
-  cardiovascular = dat$Cardiovascular,
-  hypertension   = dat$Hypertension,
+  Cardiovascular = dat$Cardiovascular,
+  Hypertension   = dat$Hypertension,
   CHF            = dat$CHF,
   CKD            = dat$CKD,
   COPD           = dat$COPD,
   DM             = dat$DM,
-  malignancy     = dat$Malignancy,
+  Malignancy     = dat$Malignancy,
   mortality_status = ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
 )
 
 dfbiditaet <- pivot_longer(
   dfKomor,
-  cols = c(cardiovascular, hypertension, CHF, CKD, COPD, DM, malignancy),
+  cols = c(Cardiovascular, Hypertension, CHF, CKD, COPD, DM, Malignancy),
   names_to = "Komorbiditaet",
   values_to = "Krankheit"
 )
@@ -261,20 +261,20 @@ ggplot() +
 
 ## Graphik: Welche Nephrotoxine begleiten die Mortalität am meisten?
 dfToxinen <- data.frame(
-  acei = dat$ACEI,
+  ACEI = dat$ACEI,
   ARB = dat$ARB,
   Aminoglycosides = dat$Aminoglycosides,
   Loop = dat$Loop,
   NSAID = dat$NSAID,
-  Piptaz = dat$PipTaz,
-  vasopressors = dat$Vasopressors
+  PipTaz = dat$PipTaz,
+  Vasopressors = dat$Vasopressors
 )
 
 dfToxinen$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
 
 dfNephro <- pivot_longer(
   dfToxinen,
-  cols = c(acei, ARB, Aminoglycosides, Loop, NSAID, Piptaz, vasopressors),
+  cols = c(ACEI, ARB, Aminoglycosides, Loop, NSAID, PipTaz, Vasopressors),
   names_to = "Nephrotoxin",
   values_to = "Krankheit"
 )
