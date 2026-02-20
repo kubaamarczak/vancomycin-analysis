@@ -702,9 +702,8 @@ summary <- long %>%
 
 ggplot(summary, aes(comorbidity, mort_rate)) +
   geom_col()
-## -------------------------------------------------------------------
-################################################################################
-## GRAPHIKEN - Mortalitätsanalyse (Nermine Msolly)
+
+## GRAPHIKEN - Mortalitätsanalyse 
 ################################################################################
 
 ## GRAPHIK 7: Therapiedauer nach Mortalitätsstatus -----------------------------
