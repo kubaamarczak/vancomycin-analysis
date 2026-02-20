@@ -85,14 +85,14 @@ dat$C_mean <- rowMeans(dat[,c("C24","C48","C72")], na.rm=TRUE)
 dat$deltaSCr <- dat$SCr72 - dat$SCrStart
 dat$deltaeGFR <- dat$eGFR72 - dat$eGFRStart
 
-ggplot(longC, aes(time, C)) +
-  geom_boxplot()
-
 longC <- dat %>%
   select(C24, C48, C72) %>%
   pivot_longer(cols = everything(),
                names_to = "time",
                values_to = "C")
+## [Vancomycin-Spiegel über 3 Tage verteilt]
+ggplot(longC, aes(time, C)) +
+  geom_boxplot()
 
 p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
   geom_hex(alpha = 0.75, bins = 41) +
