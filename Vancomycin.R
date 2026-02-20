@@ -14,6 +14,7 @@ library(grid)
 library(dplyr)
 library(corrplot)
 library(hexbin)
+library(scales)
 ## -----------------------------------------------------------------------------
 
 ## POPULATION VERSTEHEN --------------------------------------------------------
