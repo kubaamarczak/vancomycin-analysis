@@ -159,9 +159,9 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
 ## Graphik: Schweregrad der Erkrankung 
 #Mortalität abhängig vom Schweregrad der Erkrankung, Subtitel: (Messwerte zu Beginn der Therapie)
 # bitte über den Graphik aufschreiben
-dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebt","Gestorben")
+dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebend","Gestorben")
 
-my_colors <- c("Lebt" = "#5DA5DA",
+my_colors <- c("Lebend" = "#5DA5DA",
                "Gestorben" = "#C44E52")
 
 
@@ -172,7 +172,10 @@ p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.text.x = element_text(size = 11))
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 12),
+        axis.title.x = element_text(size = 14),
+        axis.text.x = element_text(size = 12))
 
 p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   geom_boxplot() +
@@ -181,7 +184,10 @@ p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.text.x = element_text(size = 11))
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 12),
+        axis.title.x = element_text(size = 14),
+        axis.text.x = element_text(size = 12))
 
 p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   geom_boxplot() +
@@ -190,7 +196,10 @@ p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.text.x = element_text(size = 11))
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 12),
+        axis.title.x = element_text(size = 14),
+        axis.text.x = element_text(size = 12))
 
 p4 <- ggplot(dat, aes(mortality_status, CRP)) +
   geom_boxplot() +
@@ -198,7 +207,10 @@ p4 <- ggplot(dat, aes(mortality_status, CRP)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.text.x = element_text(size = 11))
+        axis.title.y = element_text(size = 14),
+        axis.text.y = element_text(size = 12),
+        axis.title.x = element_text(size = 14),
+        axis.text.x = element_text(size = 12))
 
 grid.arrange(
   p1, p2, p3, p4,
@@ -241,7 +253,7 @@ dfKomor <- data.frame(
   COPD           = dat$COPD,
   DM             = dat$DM,
   Malignancy     = dat$Malignancy,
-  mortality_status = ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
+  mortality_status = ifelse(is.na(dat$Mortalitydate), "Lebend", "Gestorben")
 )
 
 dfbiditaet <- pivot_longer(
@@ -251,15 +263,12 @@ dfbiditaet <- pivot_longer(
   values_to = "Krankheit"
 )
 
-# Nur Patienten mit jeweiliger Komorbidität
 dfexposed2 <- dfbiditaet %>%
   filter(tolower(Krankheit) == "yes")
 
-# Counts nach Komorbidität und Status (für Balken)
 count_df <- dfexposed2 %>%
   count(Komorbiditaet, mortality_status, name = "n_status")
 
-# Mortalitätsrate + Gesamt-n pro Komorbidität (für Linie)
 rate_df <- dfexposed2 %>%
   group_by(Komorbiditaet) %>%
   summarise(
@@ -278,18 +287,16 @@ count_df$Komorbiditaet <- factor(count_df$Komorbiditaet, levels = order_levels)
 rate_df$Komorbiditaet  <- factor(rate_df$Komorbiditaet,  levels = order_levels)
 
 ggplot() +
-  # Balken: Anzahl (gestapelt nach Status)
   geom_col(
     data = count_df,
     aes(x = Komorbiditaet, y = n_status, fill = mortality_status)
   ) +
   scale_fill_manual(
     values = c(
-      "Lebt" = "#5DA5DA",
+      "Lebend" = "#5DA5DA",
       "Gestorben" = "#C44E52"
     )
   ) +
-  # Linie + Punkte: Mortalitätsrate (skaliert auf Count-Achse)
   geom_line(
     data = rate_df,
     aes(x = Komorbiditaet, y = mort_rate * scale_factor, group = 1),
@@ -309,7 +316,14 @@ ggplot() +
     sec.axis = sec_axis(~ . / scale_factor, name = "Mortalitätsrate")
   ) +
   labs(x = "Komorbidität", fill = "Status") +
-  theme_minimal()
+  theme_minimal() +
+  theme( axis.title.y = element_text(size = 12),
+         axis.title.y.right = element_text(size = 12),
+         axis.text.y = element_text(size = 10),
+         axis.text.y.right = element_text(size = 10),
+         axis.title.x = element_text(size = 12),
+         axis.text.x = element_text(size = 10)
+  )
 ## -------------------------------------------------------------------
 
 ## Graphik: Welche Nephrotoxine begleiten die Mortalität am meisten?
@@ -323,7 +337,7 @@ dfToxinen <- data.frame(
   Vasopressors = dat$Vasopressors
 )
 
-dfToxinen$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
+dfToxinen$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebend", "Gestorben")
 
 dfNephro <- pivot_longer(
   dfToxinen,
@@ -335,15 +349,12 @@ dfNephro <- pivot_longer(
 dfexposed <- dfNephro %>%
   filter(Krankheit == "yes") 
 
-# Nur Patienten mit jeweiligem Nephrotoxin
 dfexposed2 <- dfNephro %>%
   filter(tolower(Krankheit) == "yes")
 
-# Counts nach Komorbidität und Status (für Balken)
 count_df <- dfexposed2 %>%
   count(Nephrotoxin, mortality_status, name = "n_status")
 
-# Mortalitätsrate + Gesamt-n pro Komorbidität (für Linie)
 rate_df <- dfexposed2 %>%
   group_by(Nephrotoxin) %>%
   summarise(
@@ -362,18 +373,16 @@ count_df$Nephrotoxin <- factor(count_df$Nephrotoxin, levels = order_levels)
 rate_df$Nephrotoxin <- factor(rate_df$Nephrotoxin,  levels = order_levels)
 
 ggplot() +
-  # Balken: Anzahl (gestapelt nach Status)
   geom_col(
     data = count_df,
     aes(x = Nephrotoxin, y = n_status, fill = mortality_status)
   ) +
   scale_fill_manual(
     values = c(
-      "Lebt" = "#5DA5DA",
+      "Lebend" = "#5DA5DA",
       "Gestorben" = "#C44E52"
     )
   ) +
-  # Linie + Punkte: Mortalitätsrate (skaliert auf Count-Achse)
   geom_line(
     data = rate_df,
     aes(x = Nephrotoxin, y = mort_rate * scale_factor, group = 1),
@@ -390,10 +399,18 @@ ggplot() +
   ) +
   scale_y_continuous(
     name = "Anzahl Patienten",
-    sec.axis = sec_axis(~ . / scale_factor, name = "Mortalitätsrate")
+    sec.axis = sec_axis(~ . / scale_factor, name = "Mortalitätsrate"),
   ) +
   labs(x = "Nephrotoxin", fill = "Status") +
-  theme_minimal()
+  theme_minimal() +
+  theme( axis.title.y = element_text(size = 12),
+        axis.title.y.right = element_text(size = 12),
+        axis.text.y = element_text(size = 10),
+        axis.text.y.right = element_text(size = 10),
+        axis.title.x = element_text(size = 12),
+        axis.text.x = element_text(size = 10)
+    ) 
+  
 ## ---------------------------------------------------------------------
 ## -----------------------------------------------------------------------------
 
