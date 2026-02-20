@@ -160,8 +160,8 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
 # bitte über den Graphik aufschreiben
 dat$mortality_status <- ifelse(is.na(dat$Mortalitydate),"Lebt","Gestorben")
 
-my_colors <- c("Lebt" = "#4DBBD5",
-               "Gestorben" = "#E64B35")
+my_colors <- c("Lebt" = "#5DA5DA",
+               "Gestorben" = "#C44E52")
 
 
 p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
@@ -282,11 +282,17 @@ ggplot() +
     data = count_df,
     aes(x = Komorbiditaet, y = n_status, fill = mortality_status)
   ) +
+  scale_fill_manual(
+    values = c(
+      "Lebt" = "#5DA5DA",
+      "Gestorben" = "#C44E52"
+    )
+  ) +
   # Linie + Punkte: Mortalitätsrate (skaliert auf Count-Achse)
   geom_line(
     data = rate_df,
     aes(x = Komorbiditaet, y = mort_rate * scale_factor, group = 1),
-    color = "red", linewidth = 1.2
+    color = "black", linewidth = 1.2
   ) +
   geom_point(
     data = rate_df,
@@ -295,7 +301,7 @@ ggplot() +
   ) +
   scale_color_manual(
     name = "",
-    values = c("Mortalitätsrate" = "red")
+    values = c("Mortalitätsrate" = "black")
   ) +
   scale_y_continuous(
     name = "Anzahl Patienten",
@@ -360,11 +366,17 @@ ggplot() +
     data = count_df,
     aes(x = Nephrotoxin, y = n_status, fill = mortality_status)
   ) +
+  scale_fill_manual(
+    values = c(
+      "Lebt" = "#5DA5DA",
+      "Gestorben" = "#C44E52"
+    )
+  ) +
   # Linie + Punkte: Mortalitätsrate (skaliert auf Count-Achse)
   geom_line(
     data = rate_df,
     aes(x = Nephrotoxin, y = mort_rate * scale_factor, group = 1),
-    color = "red", linewidth = 1.2
+    color = "black", linewidth = 1.2
   ) +
   geom_point(
     data = rate_df,
@@ -373,7 +385,7 @@ ggplot() +
   ) +
   scale_color_manual(
     name = "",
-    values = c("Mortalitätsrate" = "red")
+    values = c("Mortalitätsrate" = "black")
   ) +
   scale_y_continuous(
     name = "Anzahl Patienten",
