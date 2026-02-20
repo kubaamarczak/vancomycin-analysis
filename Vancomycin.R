@@ -729,6 +729,7 @@ g_c24 <- ggplot(dat_c24, aes(x = C24_Quartil, y = Mortalitaetsrate, fill = C24_Q
         plot.title      = element_text(face = "bold"))
 
 print(g_c24)
-
+ggsave("therapiedauer_mortalitaet.png", g_duration, width = 10, height = 6, dpi = 300)
+ggsave("mortalitaetsrate_c24_quartile.png", g_c24,     width = 10, height = 6, dpi = 300)
 
 ## -----------------------------------------------------------------------------
