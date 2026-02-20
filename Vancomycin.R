@@ -49,8 +49,8 @@ ggplot(long, aes(x = value, color = gender)) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   theme_minimal() + theme(
-    text = element_text(size = 19),
-    axis.title = element_text(size = 16),
+    text = element_text(size = 18),
+    axis.title = element_text(size = 18),
     plot.title = element_text(size = 24)
   )
 
@@ -105,7 +105,8 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
     
   ) +
   theme_minimal() +
-  theme(axis.title = element_text(size = 14))
+  theme(text = element_text(size = 16),
+        axis.title = element_text(size = 16))
 
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
@@ -116,7 +117,8 @@ p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(axis.title = element_text(size = 14))
+  theme(text = element_text(size = 16),
+        axis.title = element_text(size = 16))
 
 longC <- dat %>%
   select(C24, C48, C72) %>%
@@ -133,7 +135,8 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(axis.title = element_text(size = 14))
+  theme(text = element_text(size = 16),
+        axis.title = element_text(size = 16))
 
 grid.arrange(p1, p2, ncol = 2)
 grid.arrange(p3, p2, ncol = 2)
