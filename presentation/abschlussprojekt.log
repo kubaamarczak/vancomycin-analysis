@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 10:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  20 FEB 2026 10:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1392,11 +1392,15 @@ Overfull \hbox (55.948pt too wide) in paragraph at lines 152--152
  [][]  
  []
 
-<mort x kom.png, id=112, 1413.28pt x 1495.5875pt>
-File: mort x kom.png Graphic file (type png)
-<use mort x kom.png>
-Package pdftex.def Info: mort x kom.png  used on input line 152.
-(pdftex.def)             Requested size: 171.21765pt x 181.17432pt.
+<Kormo x Mort.png, id=112, 1606.0pt x 903.375pt>
+File: Kormo x Mort.png Graphic file (type png)
+<use Kormo x Mort.png>
+Package pdftex.def Info: Kormo x Mort.png  used on input line 152.
+(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
+
+Overfull \vbox (9.85892pt too high) detected at line 152
+ []
+
 
 Overfull \hbox (55.948pt too wide) has occurred while \output is active
  [][]  
@@ -1404,18 +1408,18 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [10
 
- <./mort x kom.png>]
+ <./Kormo x Mort.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 163--163
  [][]  
  []
 
-<mort x nep.png, id=121, 1413.28pt x 1495.5875pt>
-File: mort x nep.png Graphic file (type png)
-<use mort x nep.png>
-Package pdftex.def Info: mort x nep.png  used on input line 163.
-(pdftex.def)             Requested size: 171.21765pt x 181.17432pt.
+<Nephro x Mort.png, id=121, 1606.0pt x 903.375pt>
+File: Nephro x Mort.png Graphic file (type png)
+<use Nephro x Mort.png>
+Package pdftex.def Info: Nephro x Mort.png  used on input line 163.
+(pdftex.def)             Requested size: 342.43532pt x 192.62285pt.
 
-Overfull \vbox (0.35435pt too high) detected at line 163
+Overfull \vbox (11.80289pt too high) detected at line 163
  []
 
 
@@ -1425,7 +1429,7 @@ Overfull \hbox (55.948pt too wide) has occurred while \output is active
 
 [11
 
- <./mort x nep.png>]
+ <./Nephro x Mort.png>]
 Overfull \hbox (55.948pt too wide) in paragraph at lines 172--172
  [][]  
  []
@@ -1505,7 +1509,7 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  30926 strings out of 474116
- 602234 string characters out of 5743682
+ 602269 string characters out of 5743682
  1940187 words of memory out of 5000000
  52689 multiletter control sequences out of 15000+600000
  575478 words of font info for 86 fonts, out of 8000000 for 9000
@@ -1518,7 +1522,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (15 pages, 1436342 bytes).
+Output written on abschlussprojekt.pdf (15 pages, 1413872 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
