@@ -823,14 +823,18 @@ g_c24 <- ggplot(dat_c24_sum, aes(x = C24_Quartil, y = Mortalitaetsrate,
     y        = "Mortalitätsrate"
   ) +
   theme_classic(base_size = 14) +
-  theme(
+ theme(
     plot.title        = element_text(face = "bold", size = 14),
     plot.subtitle     = element_text(size = 10, color = "gray40"),
     legend.position   = "right",
     legend.key.height = unit(2, "cm"),
     plot.background   = element_rect(fill = "white", color = NA),
-    panel.background  = element_rect(fill = "white", color = NA)
+    panel.background  = element_rect(fill = "white", color = NA),
+    panel.grid.major.y = element_line(color = "gray85", linewidth = 0.5),
+    panel.grid.major.x = element_blank(),  
+    panel.grid.minor   = element_blank()   
   )
+
 
 print(g_c24)
 
