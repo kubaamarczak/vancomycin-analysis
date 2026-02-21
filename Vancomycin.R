@@ -768,7 +768,6 @@ g_duration <- ggplot(dat, aes(x = mortality_status, y = Therapiedauer, fill = mo
         plot.title      = element_text(face = "bold"))
 
 print(g_duration)
-
 ## GRAPHIK 8: Mortalitätsrate nach C24-Quartilen -------------------------------
 
 dat$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
@@ -818,19 +817,24 @@ g_c24 <- ggplot(dat_c24_sum, aes(x = C24_Quartil, y = Mortalitaetsrate,
     expand = expansion(mult = c(0, 0.15))
   ) +
   labs(
-    title    = "Mortalitätsrate nach Vancomycin-Serumspiegel (C24)",
-    subtitle = "Einteilung der Patienten in Quartile des C24-Spiegels | Farbe = medianer C24-Wert",
+    title    = "Mortalitätsrate nach C24-Serumspiegel",
+    subtitle = "Quartile des C24-Spiegels | Farbe = medianer C24-Wert",
     x        = "C24-Quartil",
     y        = "Mortalitätsrate"
   ) +
-  theme_minimal(base_size = 14) +
+  theme_classic(base_size = 14) +
   theme(
-    plot.title        = element_text(face = "bold"),
+    plot.title        = element_text(face = "bold", size = 14),
+    plot.subtitle     = element_text(size = 10, color = "gray40"),
     legend.position   = "right",
-    legend.key.height = unit(2, "cm")
+    legend.key.height = unit(2, "cm"),
+    plot.background   = element_rect(fill = "white", color = NA),
+    panel.background  = element_rect(fill = "white", color = NA)
   )
 
 print(g_c24)
+
+
 ggsave("therapiedauer_mortalitaet.png", g_duration, width = 10, height = 6, dpi = 300)
 ggsave("mortalitaetsrate_c24_quartile.png", g_c24,     width = 10, height = 6, dpi = 300)
 
