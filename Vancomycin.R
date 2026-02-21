@@ -768,22 +768,9 @@ g_duration <- ggplot(dat, aes(x = mortality_status, y = Therapiedauer, fill = mo
         plot.title      = element_text(face = "bold"))
 
 print(g_duration)
-## GRAPHIK 8: Mortalitätsrate nach C24-Quartilen -------------------------------
 
-dat$mortality_status <- ifelse(is.na(dat$Mortalitydate), "Lebt", "Gestorben")
+## GRAPHIK 8 ------------------------------------------------------------------
 
-# 2. Therapiedauer
-dat <- dat %>%
-  mutate(
-    Start         = as.Date(Start),
-    End           = as.Date(End),
-    Therapiedauer = as.numeric(difftime(End, Start, units = "days"))
-  ) %>%
-  filter(!is.na(Therapiedauer), Therapiedauer >= 0)
-
-table(dat$mortality_status) 
-
-# 4. Graphik 8
 dat_c24_sum <- dat %>%
   filter(!is.na(C24)) %>%
   mutate(
@@ -800,13 +787,11 @@ dat_c24_sum <- dat %>%
     .groups          = "drop"
   )
 
-print(dat_c24_sum)
-
 g_c24 <- ggplot(dat_c24_sum, aes(x = C24_Quartil, y = Mortalitaetsrate, 
-                                 fill = C24_median)) +
+                                  fill = C24_median)) +
   geom_col(alpha = 0.9, width = 0.62) +
   geom_text(aes(label = paste0(percent(Mortalitaetsrate, accuracy = 0.1), 
-                               "\n(n=", n, ")")),
+                                "\n(n=", n, ")")),
             vjust = -0.35, size = 4.5, fontface = "bold") +
   scale_fill_viridis_c(
     option = "viridis",
@@ -823,23 +808,21 @@ g_c24 <- ggplot(dat_c24_sum, aes(x = C24_Quartil, y = Mortalitaetsrate,
     y        = "Mortalitätsrate"
   ) +
   theme_classic(base_size = 14) +
- theme(
-    plot.title        = element_text(face = "bold", size = 14),
-    plot.subtitle     = element_text(size = 10, color = "gray40"),
-    legend.position   = "right",
-    legend.key.height = unit(2, "cm"),
-    plot.background   = element_rect(fill = "white", color = NA),
-    panel.background  = element_rect(fill = "white", color = NA),
+  theme(
+    plot.title         = element_text(face = "bold", size = 14),
+    plot.subtitle      = element_text(size = 10, color = "gray40"),
+    legend.position    = "right",
+    legend.key.height  = unit(2, "cm"),
+    plot.background    = element_rect(fill = "white", color = NA),
+    panel.background   = element_rect(fill = "white", color = NA),
     panel.grid.major.y = element_line(color = "gray85", linewidth = 0.5),
-    panel.grid.major.x = element_blank(),  
-    panel.grid.minor   = element_blank()   
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank()
   )
-
 
 print(g_c24)
 
+## SAVE -----------------------------------------------------------------------
 
-ggsave("therapiedauer_mortalitaet.png", g_duration, width = 10, height = 6, dpi = 300)
-ggsave("mortalitaetsrate_c24_quartile.png", g_c24,     width = 10, height = 6, dpi = 300)
-
-## -----------------------------------------------------------------------------
+ggsave("therapiedauer.png",   g_duration, width = 10, height = 6, dpi = 300, bg = "white")
+ggsave("mortalitaet_c24.png", g_c24,      width = 10, height = 6, dpi = 300, bg = "white")
