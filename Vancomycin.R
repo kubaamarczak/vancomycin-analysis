@@ -43,8 +43,8 @@ long$variable <- factor(long$variable,
                              labels = c("Alter (Jahre)", "Größe (cm)", "Gewicht (kg)"))
 
 ggplot(long, aes(x = value, color = gender)) +
-  geom_density(linewidth = 1) +
-  geom_rug() +
+  geom_density(linewidth = 0.5) +
+  geom_rug(linewidth = 0.15) +
   facet_wrap(~ variable, scales = "free", nrow = 1) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
@@ -57,6 +57,7 @@ ggplot(long, aes(x = value, color = gender)) +
     legend.spacing.x = unit(0.1, "cm"),
     legend.title = element_text(size=7)
   )
+
 ggsave("population.pdf",
        width = 14,
        height = 6.5,
@@ -85,7 +86,7 @@ dat_kidney <- data.frame(
 )
 
 corrplot(cor(dat_kidney, use = "complete.obs"),
-         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.cex = 1, cl.ratio = 0.15, cl.offset = 0.1)
+         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.cex = 0.75, cl.ratio = 0.2, cl.offset = 1)
 par(opar)
 dev.off()
 ## -------------------------------
@@ -114,9 +115,12 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
     
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 18),
-        axis.title = element_text(size = 17),
-        legend.title = element_text(size = 14))
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        legend.title = element_text(size = 9),
+        legend.key.size = unit(0.5, "cm"),
+        legend.spacing.x = unit(0.1, "cm")
+        )
 
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
@@ -127,9 +131,12 @@ p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 18),
-        axis.title = element_text(size = 17),
-        legend.title = element_text(size = 14))
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        legend.title = element_text(size = 9),
+        legend.key.size = unit(0.5, "cm"),
+        legend.spacing.x = unit(0.1, "cm")
+        )
 
 longC <- dat %>%
   select(C24, C48, C72) %>%
@@ -146,12 +153,27 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
     y = expression(Delta*"eGFR")
   ) +
   theme_minimal() +
-  theme(text = element_text(size = 18),
-        axis.title = element_text(size = 17),
-        legend.title = element_text(size = 14))
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        legend.title = element_text(size = 9),
+        legend.key.size = unit(0.5, "cm"),
+        legend.spacing.x = unit(0.1, "cm"))
 
-grid.arrange(p1, p2, ncol = 2)
-grid.arrange(p3, p2, ncol = 2)
+plot_save_1 <- grid.arrange(p1, p2, ncol = 2)
+
+ggsave("test.pdf",
+       plot = plot_save_1,
+       width = 19,
+       height = 7,
+       units = "cm")
+
+plot_save_2 <- grid.arrange(p3, p2, ncol = 2)
+
+ggsave("test2.pdf",
+       plot = plot_save_2,
+       width = 19,
+       height = 7,
+       units = "cm")
 
 ## -----------------------------------------------------------------
 
