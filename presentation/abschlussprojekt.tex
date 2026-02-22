@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[10pt, aspectratio=169]{beamer}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,10 +37,14 @@
         \item[$\rightarrow$] Verhalten von SCr- und eGFR-Werten
         \item[$\rightarrow$] Auswirkung vom Vancomycin-Spiegel auf Nierenmarker
         \item Mortalitätsanalyse
+        \item[$\rightarrow$] Welchen Einfluss hat Vancomycin auf die Mortalität?
+        \begin{itemize}
+            \item Vancomycin-Spiegel
+            \item Klinische Parameter im Vergleich
+        \end{itemize}
         \item[$\rightarrow$] Welche Einflüsse begleiten die Mortalität am meisten?
         \begin{itemize}
             \item Schweregrades der Erkrankung
-            \item Vancomycin-Spiegel
             \item Komorbiditäten
             \item Nephrotoxine
         \end{itemize}
@@ -52,7 +56,8 @@
     \frametitle{Population verstehen}
     \begin{figure}
         \centering
-        \includegraphics[width=1\linewidth]{population.png}
+        \includegraphics[width=1\linewidth]{population.pdf}
+        \vspace{-0.75cm}
         \caption{Kerndichteschätzungen mit Gaußkern für Alter, Größe und Gewicht.}
     \end{figure}
 \end{frame}
@@ -62,7 +67,9 @@
     \frametitle{Verhalten von SCr- und eGFR-Werten}
     \begin{figure}
         \centering
-        \includegraphics[width=0.65\linewidth]{corrplot nierenmarker.png}
+        \vspace{-0.2cm}
+        \includegraphics[width=0.55\linewidth]{corrplot nierenmarker.png}
+        \vspace{-0.4cm}
         \caption{Korrelationsplot zwischen SCr- und eGFR-Werten als Nierenmarker.}
     \end{figure}
 \end{frame}
@@ -73,6 +80,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=1.03\linewidth]{ZhSCreGFR.png}
+        \vspace{-0.4cm}
         \caption{Hexbin-Plots von SCr und eGFR in Abhängigkeit von der mittleren C-Konzentration über drei Tage ($\bar{C}$).}
     \end{figure}
 \end{frame}
@@ -83,76 +91,94 @@
     \begin{figure}
         \centering
         \includegraphics[width=1.03\linewidth]{HexScat.png}
+         \vspace{-0.4cm}
         \caption{Vergleich der Darstellung desselben Datensatzes als Scatterplot und Hexbin-Plot.}
     \end{figure}
 \end{frame}
 
 % Folie 7 - ILKAY
 \begin{frame}
-	\frametitle{Auswirkung vom Vancomycin-Spiegel auf Nierenmarker}
+	\frametitle{Auswirkung des Vancomycin-Spiegels auf Nierenmarker}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.8\linewidth]{VancomycinNiereGewicht.png}
-		\caption{Scatter-Plot von eGFR24 in Abhängigkeit vom Vancomycin-Spiegel nach 24h (C24).}
+		\hspace*{1.5cm}
+		\includegraphics[width=0.73\linewidth]{C24xeGFRStart.pdf}
+		\vspace{-0.45cm}
+		\caption{Zusammenhang zwischen Vancomycin-Konzentration ($C_{24}$) und Nierenfunktion ($eGFR_{Start}$).}
 	\end{figure}
 \end{frame}
 
-% Folie 8 - SERGIO
+% Folie 8 - ILKAY
 \begin{frame}
-    \frametitle{Einfluss des Schweregrades der Erkrankung auf die Mortalität}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.7\linewidth]{SchwerxMord.png}
-        \caption{Boxplots der Schweregradvariablen zu Therapiebeginn (erste 24h), gruppiert nach Mortalitätsstatus (lebt vs. gestorben).}
-    \end{figure}
+	\frametitle{Einfluss des Vancomycin-Spiegels auf die Mortalität}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.98\linewidth]{C24xM.pdf}
+		\vspace{-0.45cm}
+		\caption{Mortalität in Abhängigkeit vom Vancomycin-Spiegel nach 24h ($C_{24}$).}
+	\end{figure}
 \end{frame}
 
 % Folie 9 - ILKAY
 \begin{frame}
-	\frametitle{Wie sich der Vancomycin Spiegel auf die Sterberate auswirkt}
+	\frametitle{Klinische Parameter im Vergleich nach Überlebensstatus}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.73\linewidth]{Van-Spie x Strt.png}
-		\caption{Barplot vom Zusammenhang zwischen Vancomycin-Spiegel nach 24 Stunden und Mortalität.}
+		\includegraphics[width=0.99\linewidth]{ParaAbweichung.pdf}
+		\vspace{-0.4cm}
+		\caption{Relative Abweichung klinischer Parameter bei Verstorbenen (Referenz: Überlebende)}
 	\end{figure}
 \end{frame}
 
 % Folie 10 - SERGIO
 \begin{frame}
+    \frametitle{Einfluss des Schweregrades der Erkrankung auf die Mortalität}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{SchwerxMord.png}
+         \vspace{-0.2cm}
+        \caption{Boxplots der Schweregradvariablen zu Therapiebeginn (erste 24h), gruppiert nach Mortalitätsstatus (lebt vs. gestorben).}
+    \end{figure}
+\end{frame}
+
+
+
+% Folie 11 - SERGIO
+\begin{frame}
     \frametitle{Welche Komorbiditäten begleiten die Mortalität am meisten?}
     \begin{figure}
         \centering
-        \includegraphics[width=1\linewidth]{KomorxMort.png}
+        \includegraphics[width=0.85\linewidth]{KomorxMort.png}
         \caption{Barplot Anzahl von Patienten und Mortalitätsrate abhängig von Komorbiditäten.}
     \end{figure}
 \end{frame}
 
-% Folie 11 - SERGIO
+% Folie 12 - SERGIO
 \begin{frame}
     \frametitle{Welche Nephrotoxine begleiten die Mortalität am meisten?}
     \begin{figure}
         \centering
-        \includegraphics[width=1\linewidth]{NephroxMort.png}
+        \includegraphics[width=0.85\linewidth]{NephroxMort.png}
         \caption{Barplot Anzahl von Patienten und Mortalitätsrate abhängig von Nephrotoxinen.}
-    \end{figure}
-\end{frame}
-
-% Folie 12 - NERMINE
-\begin{frame}
-    \frametitle{Therapiedauer nach Mortalitätsstatus}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.85\linewidth]{therapiedauer_mortalitaet.png}
-        \caption{Dauer der Vancomycin-Therapie nach Mortalitätsstatus.}
     \end{figure}
 \end{frame}
 
 % Folie 13 - NERMINE
 \begin{frame}
+    \frametitle{Therapiedauer nach Mortalitätsstatus}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\linewidth]{therapiedauer_mortalitaet.png}
+        \caption{Dauer der Vancomycin-Therapie nach Mortalitätsstatus.}
+    \end{figure}
+\end{frame}
+
+% Folie 14 - NERMINE
+\begin{frame}
     \frametitle{Mortalitätsrate nach C24-Quartilen}
     \begin{figure}
         \centering
-        \includegraphics[width=0.85\linewidth]{ Rplot.png}
+        \includegraphics[width=0.9\linewidth]{ Rplot.png}
         \caption{Mortalitätsrate nach Quartilen des Vancomycin-Serumspiegels (C24).}
     \end{figure}
 \end{frame}

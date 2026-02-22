@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.5)  22 FEB 2026 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.28)  22 FEB 2026 21:38
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **abschlussprojekt.tex
 (./abschlussprojekt.tex
@@ -739,7 +740,7 @@ Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TP@margin=\dimen297
 \TP@absmargin=\dimen298
 
-Grid set 16 x 16 = 22.7622pt x 17.07166pt
+Grid set 16 x 16 = 28.45274pt x 16.00467pt
 \TPboxrulesize=\dimen299
 \TP@ox=\dimen300
 \TP@oy=\dimen301
@@ -1058,12 +1059,12 @@ LaTeX Font Info:    ... okay on input line 26.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(9.99756pt, 344.20024pt, 9.99756pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=344.20024pt
-* \textheight=244.6939pt
+* h-part:(L,W,R)=(9.99756pt, 435.24896pt, 9.99756pt)
+* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=256.0748pt
+* \textwidth=435.24896pt
+* \textheight=227.62207pt
 * \oddsidemargin=-62.27243pt
 * \evensidemargin=-62.27243pt
 * \topmargin=-72.26999pt
@@ -1226,26 +1227,26 @@ Package biblatex Info: Reference segment=0 on input line 26.
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 48
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 52
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 48.
+ut line 52.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1253,105 +1254,147 @@ thkerncmss.
 ) [2
 
 ]
-<population.png, id=45, 2304.61pt x 1104.125pt>
-File: population.png Graphic file (type png)
-<use population.png>
-Package pdftex.def Info: population.png  used on input line 58.
-(pdftex.def)             Requested size: 344.20024pt x 164.904pt.
- [3
+<population.pdf, id=45, 397.485pt x 184.69pt>
+File: population.pdf Graphic file (type pdf)
+<use population.pdf>
+Package pdftex.def Info: population.pdf  used on input line 63.
+(pdftex.def)             Requested size: 435.24896pt x 202.24371pt.
 
- <./population.png>]
-<corrplot nierenmarker.png, id=53, 1122.1925pt x 973.6375pt>
+Overfull \vbox (13.05408pt too high) detected at line 63
+ []
+
+[3
+
+ <./population.pdf>]
+<corrplot nierenmarker.png, id=56, 1122.1925pt x 973.6375pt>
 File: corrplot nierenmarker.png Graphic file (type png)
 <use corrplot nierenmarker.png>
-Package pdftex.def Info: corrplot nierenmarker.png  used on input line 68.
-(pdftex.def)             Requested size: 223.72804pt x 194.10007pt.
- [4
+Package pdftex.def Info: corrplot nierenmarker.png  used on input line 75.
+(pdftex.def)             Requested size: 239.38824pt x 207.69376pt.
+
+Overfull \vbox (10.7723pt too high) detected at line 75
+ []
+
+[4
 
  <./corrplot nierenmarker.png>]
-<ZhSCreGFR.png, id=60, 2609.75pt x 1003.75pt>
+<ZhSCreGFR.png, id=64, 2609.75pt x 1003.75pt>
 File: ZhSCreGFR.png Graphic file (type png)
 <use ZhSCreGFR.png>
-Package pdftex.def Info: ZhSCreGFR.png  used on input line 78.
-(pdftex.def)             Requested size: 354.52582pt x 136.34277pt.
+Package pdftex.def Info: ZhSCreGFR.png  used on input line 86.
+(pdftex.def)             Requested size: 448.3059pt x 172.4119pt.
 
-Overfull \hbox (10.32558pt too wide) in paragraph at lines 78--78
+Overfull \hbox (13.05693pt too wide) in paragraph at lines 86--86
  [] 
+ []
+
+
+Overfull \vbox (15.68077pt too high) detected at line 86
  []
 
 [5
 
  <./ZhSCreGFR.png>]
-<HexScat.png, id=69, 2609.75pt x 1003.75pt>
+<HexScat.png, id=73, 2609.75pt x 1003.75pt>
 File: HexScat.png Graphic file (type png)
 <use HexScat.png>
-Package pdftex.def Info: HexScat.png  used on input line 88.
-(pdftex.def)             Requested size: 354.52582pt x 136.34277pt.
+Package pdftex.def Info: HexScat.png  used on input line 97.
+(pdftex.def)             Requested size: 448.3059pt x 172.4119pt.
 
-Overfull \hbox (10.32558pt too wide) in paragraph at lines 88--88
+Overfull \hbox (13.05693pt too wide) in paragraph at lines 97--97
  [] 
+ []
+
+
+Overfull \vbox (5.1809pt too high) detected at line 97
  []
 
 [6
 
  <./HexScat.png>]
-<VancomycinNiereGewicht.png, id=76, 569.0058pt x 341.3553pt>
-File: VancomycinNiereGewicht.png Graphic file (type png)
-<use VancomycinNiereGewicht.png>
-Package pdftex.def Info: VancomycinNiereGewicht.png  used on input line 98.
-(pdftex.def)             Requested size: 275.36124pt x 165.1925pt.
- [7
+<C24xeGFRStart.pdf, id=80, 312.16624pt x 198.7425pt>
+File: C24xeGFRStart.pdf Graphic file (type pdf)
+<use C24xeGFRStart.pdf>
+Package pdftex.def Info: C24xeGFRStart.pdf  used on input line 109.
+(pdftex.def)             Requested size: 317.72987pt x 202.2901pt.
 
- <./VancomycinNiereGewicht.png>]
-<SchwerxMord.png, id=83, 1505.625pt x 1003.75pt>
-File: SchwerxMord.png Graphic file (type png)
-<use SchwerxMord.png>
-Package pdftex.def Info: SchwerxMord.png  used on input line 108.
-(pdftex.def)             Requested size: 240.93912pt x 160.61859pt.
- [8
+Overfull \vbox (10.13625pt too high) detected at line 109
+ []
 
- <./SchwerxMord.png>]
-<Van-Spie x Strt.png, id=90, 1204.5pt x 903.375pt>
-File: Van-Spie x Strt.png Graphic file (type png)
-<use Van-Spie x Strt.png>
-Package pdftex.def Info: Van-Spie x Strt.png  used on input line 118.
-(pdftex.def)             Requested size: 251.2647pt x 188.44618pt.
+[7
+
+ <./C24xeGFRStart.pdf>]
+<C24xM.pdf, id=99, 397.485pt x 184.69pt>
+File: C24xM.pdf Graphic file (type pdf)
+<use C24xM.pdf>
+Package pdftex.def Info: C24xM.pdf  used on input line 120.
+(pdftex.def)             Requested size: 426.54211pt x 198.19685pt.
+
+Overfull \vbox (6.043pt too high) detected at line 120
+ []
+
+[8
+
+ <./C24xM.pdf>]
+<ParaAbweichung.pdf, id=110, 397.485pt x 184.69pt>
+File: ParaAbweichung.pdf Graphic file (type pdf)
+<use ParaAbweichung.pdf>
+Package pdftex.def Info: ParaAbweichung.pdf  used on input line 131.
+(pdftex.def)             Requested size: 430.89885pt x 200.2231pt.
+
+Overfull \vbox (9.49197pt too high) detected at line 131
+ []
 
 [9
 
- <./Van-Spie x Strt.png>]
-<KomorxMort.png, id=97, 2509.375pt x 1204.5pt>
+ <./ParaAbweichung.pdf>]
+<SchwerxMord.png, id=121, 1505.625pt x 1003.75pt>
+File: SchwerxMord.png Graphic file (type png)
+<use SchwerxMord.png>
+Package pdftex.def Info: SchwerxMord.png  used on input line 142.
+(pdftex.def)             Requested size: 282.90916pt x 188.60088pt.
+
+Overfull \vbox (13.56021pt too high) detected at line 142
+ []
+
+[10
+
+ <./SchwerxMord.png>]
+<KomorxMort.png, id=128, 2509.375pt x 1204.5pt>
 File: KomorxMort.png Graphic file (type png)
 <use KomorxMort.png>
-Package pdftex.def Info: KomorxMort.png  used on input line 128.
-(pdftex.def)             Requested size: 344.20024pt x 165.21033pt.
- [10
-
- <./KomorxMort.png>]
-<NephroxMort.png, id=104, 2509.375pt x 1204.5pt>
-File: NephroxMort.png Graphic file (type png)
-<use NephroxMort.png>
-Package pdftex.def Info: NephroxMort.png  used on input line 138.
-(pdftex.def)             Requested size: 344.20024pt x 165.21033pt.
+Package pdftex.def Info: KomorxMort.png  used on input line 154.
+(pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
  [11
 
+ <./KomorxMort.png>]
+<NephroxMort.png, id=135, 2509.375pt x 1204.5pt>
+File: NephroxMort.png Graphic file (type png)
+<use NephroxMort.png>
+Package pdftex.def Info: NephroxMort.png  used on input line 164.
+(pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
+ [12
+
  <./NephroxMort.png>]
-<therapiedauer_mortalitaet.png, id=111, 722.7pt x 433.62pt>
+<therapiedauer_mortalitaet.png, id=142, 722.7pt x 433.62pt>
 File: therapiedauer_mortalitaet.png Graphic file (type png)
 <use therapiedauer_mortalitaet.png>
-Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 148.
+Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 174.
 
-(pdftex.def)             Requested size: 292.5723pt x 175.54236pt.
+(pdftex.def)             Requested size: 304.67294pt x 182.80066pt.
 
-[12
+Overfull \vbox (2.95058pt too high) detected at line 174
+ []
+
+[13
 
  <./therapiedauer_mortalitaet.png>]
-<Rplot.png, id=117, 647.41875pt x 283.0575pt>
+<Rplot.png, id=149, 647.41875pt x 283.0575pt>
 File: Rplot.png Graphic file (type png)
 <use Rplot.png>
-Package pdftex.def Info: Rplot.png  used on input line 158.
-(pdftex.def)             Requested size: 292.5723pt x 127.91457pt.
- [13
+Package pdftex.def Info: Rplot.png  used on input line 184.
+(pdftex.def)             Requested size: 391.7214pt x 171.26543pt.
+ [14
 
  <./Rplot.png (PNG copy)>]
 \tf@nav=\write7
@@ -1376,24 +1419,26 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30896 strings out of 474116
- 600977 string characters out of 5743682
- 1937187 words of memory out of 5000000
- 52660 multiletter control sequences out of 15000+600000
+ 30907 strings out of 474116
+ 601149 string characters out of 5743682
+ 1938187 words of memory out of 5000000
+ 52669 multiletter control sequences out of 15000+600000
  572258 words of font info for 76 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,11n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (13 pages, 2128284 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
+Output written on abschlussprojekt.pdf (14 pages, 1450409 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
