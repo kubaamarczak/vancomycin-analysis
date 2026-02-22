@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -16,8 +16,12 @@
 \usepackage{xcolor}
 
 \title{Abschlussprojekt}
-\author{Sergio Alvarez, Ilkay Aydin, Jakub Marczak, Nermine Msolly}
-\date{\today}
+\author[]{Sergio Alvarez, Ilkay Aydin, Jakub Marczak, Nermine Msolly}
+\setbeamertemplate{footline}{
+\hfill \insertshortauthor \hspace{1em} \insertframenumber/\inserttotalframenumber \hspace{1em}
+}
+\thispagestyle{empty}
+\date{24. Februar 2026}
 
 \begin{document}
 
@@ -58,7 +62,7 @@
     \frametitle{Verhalten von SCr- und eGFR-Werten}
     \begin{figure}
         \centering
-        \includegraphics[width=0.6\linewidth]{corrplot nierenmarker.jpeg}
+        \includegraphics[width=0.65\linewidth]{corrplot nierenmarker.png}
         \caption{Korrelationsplot zwischen SCr- und eGFR-Werten als Nierenmarker.}
     \end{figure}
 \end{frame}
@@ -69,7 +73,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=1.03\linewidth]{ZhSCreGFR.png}
-        \caption{Hexbin-Plots von SCr und eGFR in Abhängigkeit von der mittleren C-Konzentration ($\bar{C}$).}
+        \caption{Hexbin-Plots von SCr und eGFR in Abhängigkeit von der mittleren C-Konzentration über drei Tage ($\bar{C}$).}
     \end{figure}
 \end{frame}
 
@@ -148,7 +152,7 @@
     \frametitle{Mortalitätsrate nach C24-Quartilen}
     \begin{figure}
         \centering
-        \includegraphics[width=0.85\linewidth]{mortalitaetsrate_c24_quartile.png}
+        \includegraphics[width=0.85\linewidth]{ Rplot.png}
         \caption{Mortalitätsrate nach Quartilen des Vancomycin-Serumspiegels (C24).}
     \end{figure}
 \end{frame}
