@@ -50,7 +50,6 @@ ggplot(long, aes(x = value, color = gender)) +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   theme_minimal() + theme(
     text = element_text(size = 20),
-    text = element_text(size = 18),
     axis.title = element_text(size = 18),
     plot.title = element_text(size = 24)
   )
@@ -78,7 +77,7 @@ dat_kidney <- data.frame(
 )
 
 corrplot(cor(dat_kidney, use = "complete.obs"),
-         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.ratio = 0.15, cl.offset = 0.1)
+         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.cex = 1, cl.ratio = 0.15, cl.offset = 0.1)
 par(opar)
 ## -------------------------------
 
@@ -99,7 +98,7 @@ ggplot(longC, aes(time, C)) +
 p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
-  scale_fill_continuous(name = "Anzahl Patienten") +
+  scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"SCr"),
@@ -112,7 +111,7 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
-  scale_fill_continuous(name = "Anzahl Patienten") +
+  scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
@@ -130,7 +129,7 @@ longC <- dat %>%
 p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
-  scale_fill_continuous(name = "Anzahl Patienten") +
+  scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
