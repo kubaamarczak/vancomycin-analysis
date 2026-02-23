@@ -182,7 +182,7 @@ ggsave("HexScat.pdf",
 
 ## Graphik: Nierenfunktion verglichen mit Vancomycin Spiegel
 ggplot(dat, aes(x = eGFRStart, y = C24)) +
-  geom_point(aes(color = Weight), alpha = 0.8) +
+  geom_point(aes(color = LD), alpha = 0.8) +
   geom_smooth(method = "gam", color = "hotpink2", linewidth = 1, se= FALSE) +
   scale_color_viridis_c() +
   guides(color = guide_colorbar(
@@ -190,9 +190,9 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
     frame.linewidth = 0.3,
     ticks.colour = "black"
   )) +
-  labs(x = expression(paste("Nierenfunktion ", eGFR[Start], " [ml/min]")),
-       y = expression(paste("Vancomycin-Spiegel ", C[24], " [mg/L]")),
-        color = "Gewicht (kg)"
+  labs(x = expression(paste(eGFR[Start], " (ml/min)")),
+       y = expression(paste(C[24], " (mg/L)")),
+       color = "LD (mg/kg)"
   ) +
   theme_minimal() +
   theme(axis.text = element_text(size = 8),
@@ -202,7 +202,7 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
         legend.title = element_text(size=8),
         legend.text = element_text(size=7),
         plot.margin = margin(10, 10, 10, 15, unit = "pt")
-        )
+  )
 ggsave("C24xeGFRStart.pdf",
        width = 11,
        height = 7,
@@ -215,75 +215,67 @@ ggsave("C24xeGFRStart.pdf",
 
 ## BEREICH MORTALITÄTSANALYSE --------------------------------------------------
 
+#-------------------------------
 #Graphik: Mortalität in Abhängigkeit vom Vancomycin-Spiegel nach 24h
 
-dat$Verstorben <- !is.na(dat$Mortalitydate)
+plot_data_smooth <- dat %>%
+  filter(!is.na(eGFR24), !is.na(SAPS), !is.na(SOFA)) %>%
+  select(eGFR24, SAPS, SOFA) %>%
+  pivot_longer(cols = c(SAPS, SOFA), names_to = "Score", values_to = "Punkte") %>%
+  mutate(Score_Label = ifelse(Score == "SAPS", "SAPS Score", "SOFA Score"))
 
-dat$C24_Kategorie <- cut(dat$C24, 
-                         breaks = c(0, 15, 20, 25, 30, Inf), 
-                         labels = c("<15", "15-20", "20-25", "25-30", ">30"))
-
-mort_data <- dat %>%
-  group_by(C24_Kategorie) %>%
-  summarise(
-    Sterberate = mean(Verstorben) * 100,
-    n = n()
-  )
-
-ggplot(mort_data, aes(x = C24_Kategorie, y = Sterberate, fill = Sterberate)) +
-  geom_bar(stat = "identity", color = "white") +
-  geom_text(aes(label = paste0("n=", n)), vjust = -0.5, size = 2) +
-  scale_fill_gradient(low = "#90b3d6", high = "#2166ac") +
-  labs(x = expression(paste("Vancomycin-Spiegel ", C[24], " [mg/L]")),
-       y = "Mortalitätsrate (%)")+
-  scale_y_continuous(limits = c(0, 40)) +
+ggplot(plot_data_smooth, aes(x = eGFR24, y = Punkte, color = Score, fill = Score)) +
+  geom_smooth(method = "loess", span = 0.8, linewidth = 1.5, alpha = 0.25, se = TRUE) +
+  facet_wrap(~ Score_Label, scales = "free_y") +
+  scale_color_manual(values = c("SAPS" = "#2c7fb8", "SOFA" = "#e34a33")) +
+  scale_fill_manual(values = c("SAPS" = "#2c7fb8", "SOFA" = "#e34a33")) +
+  scale_x_continuous(limits = c(0, NA)) +
+  labs(
+    x = "eGFR [ml/min]",
+    y = "Punkte im Score"
+  ) +
   theme_minimal() +
-  theme(legend.position = "none",
-        text = element_text(size= 8),
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 8),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        plot.margin = margin(10, 60, 10, 60, unit = "pt")
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "bold", size = 9),
+    strip.background = element_rect(fill = "gray95", color = NA),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 10),
+    plot.title = element_text(size = 10),
+    panel.grid.minor = element_blank(),
+    panel.spacing = unit(2, "lines")
   )
-ggsave("C24xM.pdf",
-       width = 14,
-       height = 6.5,
-       units = "cm")
+
+ggsave("SAPSSOFAeGFR.pdf", width = 16, height = 8.5, units = "cm")
+
 
 ## ---------------------------------------------------------------------
 
 #Graphik:Prozentuale Abweichung der klinischen Parameter bei Verstorbenen (Referenz: Überlebende)
 
-mortality_diff <- dat %>%
-  mutate(Status = ifelse(is.na(Mortalitydate), "Überlebt", "Verstorben")) %>%
-  select(Status, SAPS, SOFA, C24, CRP, Leukocytes) %>%
-  pivot_longer(-Status, names_to = "Variable", values_to = "Wert") %>%
-  group_by(Variable, Status) %>%
-  summarise(Mittelwert = mean(Wert, na.rm = TRUE), .groups = "drop") %>%
-  pivot_wider(names_from = Status, values_from = Mittelwert) %>%
-  mutate(Abweichung_Prozent = (Verstorben - Überlebt) / Überlebt * 100)
+dat <- dat %>%
+  mutate(Status = ifelse(is.na(Mortalitydate), "Überlebt", "Verstorben"))
 
-ggplot(mortality_diff, aes(x = reorder(Variable, Abweichung_Prozent), y = Abweichung_Prozent)) +
-  geom_segment(aes(xend = Variable, yend = 0), color = "grey70", size = 1.5) +
-  geom_point(size = 4, color = "#d73027") + 
-  coord_flip() + 
-  theme_minimal() +
+dat %>%
+  filter(!is.na(eGFRStart)) %>%
+  ggplot(aes(x = Status, y = eGFRStart)) +
+  geom_boxplot(width = 0.45, outlier.shape = NA, fill= "grey85", color="black") +
+  geom_jitter(width = 0.12, alpha = 0.1, size = 1.2, color = "grey40") +
+  coord_flip() +
   labs(
-    x = "Klinischer Parameter",
-    y = "Prozentuale Abweichung (%)"
+    x = NULL,
+    y = expression(paste(eGFR[Start]))
   ) +
-  theme(axis.text = element_text(size = 8),
-        axis.title = element_text(size = 8),
-        axis.title.x = element_text(size = 8, margin = margin(t = 8)),
-        axis.title.y = element_text(size = 8),
-        plot.margin = margin(10, 40, 10, 15, unit = "pt"),
-        panel.grid.major.y = element_blank()
+  theme_minimal(base_size = 13)+
+  theme( 
+    legend.position = "FALSE",
+    plot.margin = margin(10, 25, 10, 10, unit = "pt"),
+    axis.title.x = element_text(size= 10),
+    panel.grid.major.y = element_blank()
   )
 
-ggsave("ParaAbweichung.pdf",
-       width = 14,
-       height = 6.5,
+ggsave("eGFRxMort.pdf", 
+       width = 16, height = 8.5, 
        units = "cm")
 
 ## ---------------------------------------------------------------------
