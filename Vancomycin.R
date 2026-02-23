@@ -3,7 +3,7 @@
 ################################################################################
 
 ## DATEN LADEN -----------------------------------------------------------------
-load("/Users/ilkay/Downloads/vancomycin.RData")
+## load("/Users/---/Downloads/vancomycin.RData")
 ## -----------------------------------------------------------------------------
 
 ## PAKETE LADEN ----------------------------------------------------------------
@@ -103,7 +103,8 @@ longC <- dat %>%
   pivot_longer(cols = everything(),
                names_to = "time",
                values_to = "C")
-## [Vancomycin-Spiegel über 3 Tage verteilt]
+
+## [Vancomycin-Spiegel über 3 Tage verteilt, nicht in der Präsentation]
 ggplot(longC, aes(time, C)) +
   geom_boxplot()
 
@@ -619,7 +620,7 @@ ggsave("therapiedauer.png",   g_duration, width = 10, height = 6, dpi = 300, bg 
 ggsave("mortalitaet_c24.png", g_c24,      width = 10, height = 6, dpi = 300, bg = "white")
 ## -----------------------------------------------------------------------------
 
-## SCRAPPED --------------------------------------------------------------------
+## SCRAPPED -- DIESE GRAPHIKEN SIND NICHT IN DER PRÄSENTATION ------------------
 
 ## Graphik: Welche Indikationen haben welche Mortalitätsraten?
 dfMortInd <- data.frame(
