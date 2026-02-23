@@ -109,7 +109,7 @@ ggplot(longC, aes(time, C)) +
 
 p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
   geom_hex(alpha = 0.75, bins = 41) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
   scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
@@ -126,7 +126,7 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
 
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
   scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
@@ -148,7 +148,7 @@ longC <- dat %>%
 
 p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_hex(alpha = 0.75, bins = 41) +
-  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
   scale_fill_continuous(name = "Patienten") +
   labs(
     x = expression(bar(C)),
@@ -163,7 +163,7 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
 
 plot_save_1 <- grid.arrange(p1, p2, ncol = 2)
 
-ggsave("test.pdf",
+ggsave("ZhSCreGFR.pdf",
        plot = plot_save_1,
        width = 19,
        height = 7,
@@ -171,7 +171,7 @@ ggsave("test.pdf",
 
 plot_save_2 <- grid.arrange(p3, p2, ncol = 2)
 
-ggsave("test2.pdf",
+ggsave("HexScat.pdf",
        plot = plot_save_2,
        width = 19,
        height = 7,

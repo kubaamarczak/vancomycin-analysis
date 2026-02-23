@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  23 FEB 2026 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  23 FEB 2026 12:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1359,13 +1359,13 @@ Overfull \hbox (8.70683pt too wide) in paragraph at lines 102--102
  []
 
 
-Overfull \vbox (11.38504pt too high) detected at line 102
+Overfull \vbox (9.13559pt too high) detected at line 102
  []
 
 [5
 
  <./ZhSCreGFR.pdf>]
-<HexScat.pdf, id=89, 540.0175pt x 198.7425pt>
+<HexScat.pdf, id=90, 540.0175pt x 198.7425pt>
 File: HexScat.pdf Graphic file (type pdf)
 <use HexScat.pdf>
 Package pdftex.def Info: HexScat.pdf  used on input line 113.
@@ -1382,7 +1382,7 @@ Overfull \vbox (0.88516pt too high) detected at line 113
 [6
 
  <./HexScat.pdf>]
-<C24xeGFRStart.pdf, id=106, 312.16624pt x 198.7425pt>
+<C24xeGFRStart.pdf, id=108, 312.16624pt x 198.7425pt>
 File: C24xeGFRStart.pdf Graphic file (type pdf)
 <use C24xeGFRStart.pdf>
 Package pdftex.def Info: C24xeGFRStart.pdf  used on input line 125.
@@ -1394,7 +1394,7 @@ Overfull \vbox (14.861pt too high) detected at line 125
 [7
 
  <./C24xeGFRStart.pdf>]
-<C24xM.pdf, id=125, 397.485pt x 184.69pt>
+<C24xM.pdf, id=127, 397.485pt x 184.69pt>
 File: C24xM.pdf Graphic file (type pdf)
 <use C24xM.pdf>
 Package pdftex.def Info: C24xM.pdf  used on input line 136.
@@ -1406,7 +1406,7 @@ Overfull \vbox (10.76775pt too high) detected at line 136
 [8
 
  <./C24xM.pdf>]
-<ParaAbweichung.pdf, id=136, 397.485pt x 184.69pt>
+<ParaAbweichung.pdf, id=138, 397.485pt x 184.69pt>
 File: ParaAbweichung.pdf Graphic file (type pdf)
 <use ParaAbweichung.pdf>
 Package pdftex.def Info: ParaAbweichung.pdf  used on input line 147.
@@ -1418,7 +1418,7 @@ Overfull \vbox (14.21672pt too high) detected at line 147
 [9
 
  <./ParaAbweichung.pdf>]
-<SchwerxMord.png, id=147, 1505.625pt x 1003.75pt>
+<SchwerxMord.png, id=149, 1505.625pt x 1003.75pt>
 File: SchwerxMord.png Graphic file (type png)
 <use SchwerxMord.png>
 Package pdftex.def Info: SchwerxMord.png  used on input line 158.
@@ -1430,7 +1430,7 @@ Overfull \vbox (18.28496pt too high) detected at line 158
 [10
 
  <./SchwerxMord.png>]
-<KomorxMort.png, id=155, 2509.375pt x 1204.5pt>
+<KomorxMort.png, id=157, 2509.375pt x 1204.5pt>
 File: KomorxMort.png Graphic file (type png)
 <use KomorxMort.png>
 Package pdftex.def Info: KomorxMort.png  used on input line 170.
@@ -1442,7 +1442,7 @@ Overfull \vbox (2.45416pt too high) detected at line 170
 [11
 
  <./KomorxMort.png>]
-<NephroxMort.png, id=162, 2509.375pt x 1204.5pt>
+<NephroxMort.png, id=165, 2509.375pt x 1204.5pt>
 File: NephroxMort.png Graphic file (type png)
 <use NephroxMort.png>
 Package pdftex.def Info: NephroxMort.png  used on input line 180.
@@ -1454,7 +1454,7 @@ Overfull \vbox (2.45416pt too high) detected at line 180
 [12
 
  <./NephroxMort.png>]
-<therapiedauer_mortalitaet.png, id=170, 722.7pt x 433.62pt>
+<therapiedauer_mortalitaet.png, id=172, 722.7pt x 433.62pt>
 File: therapiedauer_mortalitaet.png Graphic file (type png)
 <use therapiedauer_mortalitaet.png>
 Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 190.
@@ -1467,7 +1467,7 @@ Overfull \vbox (7.67532pt too high) detected at line 190
 [13
 
  <./therapiedauer_mortalitaet.png>]
-<Rplot.png, id=177, 647.41875pt x 283.0575pt>
+<Rplot.png, id=179, 647.41875pt x 283.0575pt>
 File: Rplot.png Graphic file (type png)
 <use Rplot.png>
 Package pdftex.def Info: Rplot.png  used on input line 200.
@@ -1513,10 +1513,10 @@ sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr
 ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (14 pages, 892721 bytes).
+Output written on abschlussprojekt.pdf (14 pages, 896458 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
