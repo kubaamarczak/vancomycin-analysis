@@ -47,7 +47,8 @@ ggplot(long, aes(x = value, color = gender)) +
   geom_rug(alpha = 0.15, linewidth = 0.5) +
   facet_wrap(~ variable, scales = "free_x", nrow = 1) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
-  scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
+  scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b"),
+                     labels = c("männlich", "weiblich")) +
   guides(color = guide_legend(override.aes = list(linewidth = 0.5))) +
   theme_minimal() + theme(
     text = element_text(size = 9),
