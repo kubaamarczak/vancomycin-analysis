@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.28)  23 FEB 2026 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.28)  23 FEB 2026 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1398,9 +1398,9 @@ Overfull \vbox (14.861pt too high) detected at line 125
 File: SAPSSOFAeGFR.pdf Graphic file (type pdf)
 <use SAPSSOFAeGFR.pdf>
 Package pdftex.def Info: SAPSSOFAeGFR.pdf  used on input line 136.
-(pdftex.def)             Requested size: 426.54211pt x 225.98654pt.
+(pdftex.def)             Requested size: 369.96426pt x 196.01012pt.
 
-Overfull \vbox (38.55743pt too high) detected at line 136
+Overfull \vbox (8.58101pt too high) detected at line 136
  []
 
 [8
@@ -1410,9 +1410,9 @@ Overfull \vbox (38.55743pt too high) detected at line 136
 File: eGFRxMort.pdf Graphic file (type pdf)
 <use eGFRxMort.pdf>
 Package pdftex.def Info: eGFRxMort.pdf  used on input line 147.
-(pdftex.def)             Requested size: 430.89885pt x 228.29495pt.
+(pdftex.def)             Requested size: 383.02121pt x 202.92804pt.
 
-Overfull \vbox (42.28857pt too high) detected at line 147
+Overfull \vbox (12.65349pt too high) detected at line 147
  []
 
 [9
@@ -1514,7 +1514,7 @@ ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/t
 exlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (14 pages, 956433 bytes).
+Output written on abschlussprojekt.pdf (14 pages, 956435 bytes).
 PDF statistics:
  244 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams
