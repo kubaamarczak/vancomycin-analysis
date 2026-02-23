@@ -180,7 +180,7 @@ ggsave("HexScat.pdf",
 
 ## -----------------------------------------------------------------
 
-## Graphik: Nierenfunktion verglichen mit Vancomycin Spiegel
+## Graphik: eGFRstart verglichen mit Vancomycin Spiegel nach 24h
 ggplot(dat, aes(x = eGFRStart, y = C24)) +
   geom_point(aes(color = LD), alpha = 0.8) +
   geom_smooth(method = "gam", color = "hotpink2", linewidth = 1, se= FALSE) +
@@ -190,7 +190,7 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
     frame.linewidth = 0.3,
     ticks.colour = "black"
   )) +
-  labs(x = expression(paste(eGFR[Start], " (ml/min)")),
+  labs(x = expression(paste(eGFR[Start], " (ml/min/1.73 m²)")),
        y = expression(paste(C[24], " (mg/L)")),
        color = "LD (mg/kg)"
   ) +
@@ -201,32 +201,31 @@ ggplot(dat, aes(x = eGFRStart, y = C24)) +
         axis.title.y = element_text(size = 8, margin = margin(r = 8)),
         legend.title = element_text(size=8),
         legend.text = element_text(size=7),
-        plot.margin = margin(10, 10, 10, 15, unit = "pt")
+        plot.margin = margin(0, 30, 10, 10, unit = "pt")
   )
 ggsave("C24xeGFRStart.pdf",
        width = 11,
        height = 7,
        units = "cm")
 
-
 #--------------------------------
 
-#Graphik: Mortalität in Abhängigkeit vom Vancomycin-Spiegel nach 24h
+#Graphik: SAPS/SOFA Score in Abhängigkeit zu eGFRStart
 
 plot_data_smooth <- dat %>%
-  filter(!is.na(eGFR24), !is.na(SAPS), !is.na(SOFA)) %>%
-  select(eGFR24, SAPS, SOFA) %>%
+  filter(!is.na(eGFRStart), !is.na(SAPS), !is.na(SOFA)) %>%
+  select(eGFRStart, SAPS, SOFA) %>%
   pivot_longer(cols = c(SAPS, SOFA), names_to = "Score", values_to = "Punkte") %>%
   mutate(Score_Label = ifelse(Score == "SAPS", "SAPS Score", "SOFA Score"))
 
-ggplot(plot_data_smooth, aes(x = eGFR24, y = Punkte, color = Score, fill = Score)) +
+ggplot(plot_data_smooth, aes(x = eGFRStart, y = Punkte, color = Score, fill = Score)) +
   geom_smooth(method = "loess", span = 0.8, linewidth = 1.5, alpha = 0.25, se = TRUE) +
   facet_wrap(~ Score_Label, scales = "free_y") +
-  scale_color_manual(values = c("SAPS" = "#2c7fb8", "SOFA" = "#e34a33")) +
-  scale_fill_manual(values = c("SAPS" = "#2c7fb8", "SOFA" = "#e34a33")) +
+  scale_color_manual(values = c("SAPS" = "#4C72B0", "SOFA" = "#273B5B")) +
+  scale_fill_manual(values = c("SAPS" = "#4C72B0", "SOFA" = "#273B5B")) +
   scale_x_continuous(limits = c(0, NA)) +
   labs(
-    x = "eGFR [ml/min]",
+    x = expression(paste(eGFR[Start], " (ml/min/1.73 m²)")),
     y = "Punkte im Score"
   ) +
   theme_minimal() +
@@ -241,7 +240,10 @@ ggplot(plot_data_smooth, aes(x = eGFR24, y = Punkte, color = Score, fill = Score
     panel.spacing = unit(2, "lines")
   )
 
-ggsave("SAPSSOFAeGFR.pdf", width = 16, height = 8.5, units = "cm")
+ggsave("SAPSSOFAeGFR.pdf", 
+       width = 16, 
+       height = 8.5, 
+       units = "cm")
 
 
 ## -----------------------------------------------------------------------------
@@ -253,7 +255,7 @@ ggsave("SAPSSOFAeGFR.pdf", width = 16, height = 8.5, units = "cm")
 
 ## ---------------------------------------------------------------------
 
-#Graphik:Prozentuale Abweichung der klinischen Parameter bei Verstorbenen (Referenz: Überlebende)
+#Graphik: Verteilung von eGFRStart nach Mortalitätsstatus
 
 dat <- dat %>%
   mutate(Status = ifelse(is.na(Mortalitydate), "Überlebt", "Verstorben"))
@@ -266,7 +268,7 @@ dat %>%
   coord_flip() +
   labs(
     x = NULL,
-    y = expression(paste(eGFR[Start]))
+    y = expression(paste(eGFR[Start]," (ml/min/1.73 m²)"))
   ) +
   theme_minimal(base_size = 13)+
   theme( 
@@ -919,3 +921,5 @@ summary <- long %>%
 
 ggplot(summary, aes(comorbidity, mort_rate)) +
   geom_col()
+
+
