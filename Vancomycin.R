@@ -304,10 +304,10 @@ p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.title.y = element_text(size = 17),
-        axis.text.y = element_text(size = 15),
-        axis.title.x = element_text(size = 17),
-        axis.text.x = element_text(size = 15))
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 13),
+        axis.title.x = element_text(size = 15),
+        axis.text.x = element_text(size = 13))
 
 p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   geom_boxplot() +
@@ -316,10 +316,10 @@ p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.title.y = element_text(size = 17),
-        axis.text.y = element_text(size = 15),
-        axis.title.x = element_text(size = 17),
-        axis.text.x = element_text(size = 15))
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 13),
+        axis.title.x = element_text(size = 15),
+        axis.text.x = element_text(size = 13))
 
 p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   geom_boxplot() +
@@ -328,10 +328,10 @@ p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.title.y = element_text(size = 17),
-        axis.text.y = element_text(size = 15),
-        axis.title.x = element_text(size = 17),
-        axis.text.x = element_text(size = 15))
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 13),
+        axis.title.x = element_text(size = 15),
+        axis.text.x = element_text(size = 13))
 
 p4 <- ggplot(dat, aes(mortality_status, CRP)) +
   geom_boxplot() +
@@ -339,10 +339,10 @@ p4 <- ggplot(dat, aes(mortality_status, CRP)) +
   scale_fill_manual(values = my_colors) +
   theme_minimal() +
   theme(legend.position = "none",
-        axis.title.y = element_text(size = 17),
-        axis.text.y = element_text(size = 15),
-        axis.title.x = element_text(size = 17),
-        axis.text.x = element_text(size = 15))
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 13),
+        axis.title.x = element_text(size = 15),
+        axis.text.x = element_text(size = 13))
 
 grid.arrange(
   p1, p2, p3, p4,

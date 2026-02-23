@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  23 FEB 2026 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.5)  23 FEB 2026 15:54
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **abschlussprojekt.tex
 (./abschlussprojekt.tex
@@ -1418,43 +1417,39 @@ Overfull \vbox (14.21672pt too high) detected at line 147
 [9
 
  <./ParaAbweichung.pdf>]
-<SchwerxMord.png, id=150, 1505.625pt x 1003.75pt>
-File: SchwerxMord.png Graphic file (type png)
-<use SchwerxMord.png>
-Package pdftex.def Info: SchwerxMord.png  used on input line 158.
-(pdftex.def)             Requested size: 282.90916pt x 188.60088pt.
+<SchwerxMort.pdf, id=150, 433.62pt x 289.08pt>
+File: SchwerxMort.pdf Graphic file (type pdf)
+<use SchwerxMort.pdf>
+Package pdftex.def Info: SchwerxMort.pdf  used on input line 158.
+(pdftex.def)             Requested size: 282.90916pt x 188.61435pt.
 
-Overfull \vbox (18.28496pt too high) detected at line 158
+Overfull \vbox (18.29843pt too high) detected at line 158
  []
 
 [10
 
- <./SchwerxMord.png>]
-<KomorxMort.png, id=158, 2509.375pt x 1204.5pt>
-File: KomorxMort.png Graphic file (type png)
-<use KomorxMort.png>
-Package pdftex.def Info: KomorxMort.png  used on input line 170.
-(pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
+ <./SchwerxMort.pdf>]
+<KomorxMort.pdf, id=161, 939.51pt x 361.35pt>
+File: KomorxMort.pdf Graphic file (type pdf)
+<use KomorxMort.pdf>
+Package pdftex.def Info: KomorxMort.pdf  used on input line 170.
+(pdftex.def)             Requested size: 435.24896pt x 167.40295pt.
+ [11
 
-Overfull \vbox (2.45416pt too high) detected at line 170
- []
+ <./KomorxMort.pdf>]
+<NephroxMort.pdf, id=173, 867.24pt x 361.35pt>
+File: NephroxMort.pdf Graphic file (type pdf)
+<use NephroxMort.pdf>
+Package pdftex.def Info: NephroxMort.pdf  used on input line 180.
+(pdftex.def)             Requested size: 435.24896pt x 181.35274pt.
 
-[11
-
- <./KomorxMort.png>]
-<NephroxMort.png, id=166, 2509.375pt x 1204.5pt>
-File: NephroxMort.png Graphic file (type png)
-<use NephroxMort.png>
-Package pdftex.def Info: NephroxMort.png  used on input line 180.
-(pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
-
-Overfull \vbox (2.45416pt too high) detected at line 180
+Overfull \vbox (6.2274pt too high) detected at line 180
  []
 
 [12
 
- <./NephroxMort.png>]
-<therapiedauer_mortalitaet.png, id=173, 722.7pt x 433.62pt>
+ <./NephroxMort.pdf>]
+<therapiedauer_mortalitaet.png, id=184, 722.7pt x 433.62pt>
 File: therapiedauer_mortalitaet.png Graphic file (type png)
 <use therapiedauer_mortalitaet.png>
 Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 190.
@@ -1467,7 +1462,7 @@ Overfull \vbox (7.67532pt too high) detected at line 190
 [13
 
  <./therapiedauer_mortalitaet.png>]
-<Rplot.png, id=180, 647.41875pt x 283.0575pt>
+<Rplot.png, id=191, 647.41875pt x 283.0575pt>
 File: Rplot.png Graphic file (type png)
 <use Rplot.png>
 Package pdftex.def Info: Rplot.png  used on input line 200.
@@ -1498,7 +1493,7 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  34022 strings out of 474116
- 674698 string characters out of 5743682
+ 674770 string characters out of 5743682
  1938187 words of memory out of 5000000
  55742 multiletter control sequences out of 15000+600000
  573082 words of font info for 77 fonts, out of 8000000 for 9000
@@ -1514,10 +1509,10 @@ ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/t
 exlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (14 pages, 900090 bytes).
+Output written on abschlussprojekt.pdf (14 pages, 666957 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
