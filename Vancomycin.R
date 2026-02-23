@@ -3,7 +3,7 @@
 ################################################################################
 
 ## DATEN LADEN -----------------------------------------------------------------
-load("/Users/jakubmarczak/Downloads/vancomycin.RData")
+load("/Users/ilkay/Downloads/vancomycin.RData")
 ## -----------------------------------------------------------------------------
 
 ## PAKETE LADEN ----------------------------------------------------------------
@@ -182,7 +182,7 @@ ggsave("HexScat.pdf",
 ## Graphik: Nierenfunktion verglichen mit Vancomycin Spiegel
 ggplot(dat, aes(x = eGFRStart, y = C24)) +
   geom_point(aes(color = Weight), alpha = 0.8) +
-  geom_smooth(method = "lm", color = "hotpink2", linewidth = 1, se= FALSE) +
+  geom_smooth(method = "gam", color = "hotpink2", linewidth = 1, se= FALSE) +
   scale_color_viridis_c() +
   guides(color = guide_colorbar(
     frame.colour = "black",
