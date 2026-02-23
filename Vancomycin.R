@@ -44,15 +44,16 @@ long$variable <- factor(long$variable,
 
 ggplot(long, aes(x = value, color = gender)) +
   geom_density(linewidth = 0.5) +
-  geom_rug(linewidth = 0.15) +
-  facet_wrap(~ variable, scales = "free", nrow = 1) +
+  geom_rug(alpha = 0.15, linewidth = 0.5) +
+  facet_wrap(~ variable, scales = "free_x", nrow = 1) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
   scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b")) +
   guides(color = guide_legend(override.aes = list(linewidth = 0.5))) +
   theme_minimal() + theme(
-    text = element_text(size = 8),
-    axis.title = element_text(size = 8),
-    plot.title = element_text(size = 10),
+    text = element_text(size = 9),
+    axis.title = element_text(size = 7),
+    axis.text = element_text(size = 6),
+    plot.title = element_text(size = 13),
     legend.key.size = unit(0.3, "cm"),
     legend.spacing.x = unit(0.1, "cm"),
     legend.title = element_text(size=7)

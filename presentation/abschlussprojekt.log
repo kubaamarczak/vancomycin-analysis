@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  22 FEB 2026 22:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.12)  23 FEB 2026 01:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1024,32 +1024,102 @@ Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 )
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box79
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen302
+\pgf@nodesepend=\dimen303
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen304
+\pgffor@skip=\dimen305
+\pgffor@stack=\toks50
+\pgffor@toks=\toks51
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count472
+\pgfplotmarksize=\dimen306
+)
+\tikz@lastx=\dimen307
+\tikz@lasty=\dimen308
+\tikz@lastxsaved=\dimen309
+\tikz@lastysaved=\dimen310
+\tikz@lastmovetox=\dimen311
+\tikz@lastmovetoy=\dimen312
+\tikzleveldistance=\dimen313
+\tikzsiblingdistance=\dimen314
+\tikz@figbox=\box80
+\tikz@figbox@bg=\box81
+\tikz@tempbox=\box82
+\tikz@tempbox@bg=\box83
+\tikztreelevel=\count473
+\tikznumberofchildren=\count474
+\tikznumberofcurrentchild=\count475
+\tikz@fig@count=\count476
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count477
+\pgfmatrixcurrentcolumn=\count478
+\pgf@matrix@numberofcolumns=\count479
+)
+\tikz@expandcount=\count480
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-
-(./abschlussprojekt.aux)
+ (./abschlussprojekt.aux)
 \openout1 = `abschlussprojekt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1087,17 +1157,17 @@ LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count472
-\scratchdimen=\dimen302
-\scratchbox=\box79
-\nofMPsegments=\count473
-\nofMParguments=\count474
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count475
-\MPscratchDim=\dimen303
-\MPnumerator=\count476
-\makeMPintoPDFobject=\count477
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count481
+\scratchdimen=\dimen315
+\scratchbox=\box84
+\nofMPsegments=\count482
+\nofMParguments=\count483
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count484
+\MPscratchDim=\dimen316
+\MPnumerator=\count485
+\makeMPintoPDFobject=\count486
+\everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1107,69 +1177,69 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 42.
 
 (./abschlussprojekt.out) (./abschlussprojekt.out)
 \@outlinefile=\write6
 \openout6 = `abschlussprojekt.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 26.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 26.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 42.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 26.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 26.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 26.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 26.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 26.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 26.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 26.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 26.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 26.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 26.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 26.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 26.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 26.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 26.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 26.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 26.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 26.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 26.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 26.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 26.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 26.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 42.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 42.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 26
+(Font)              `pureletters' in the math version `normal' on input line 42
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 26
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 42
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 26.
+(Font)              `pureletters' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 26
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 42
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 26.
+ut line 42.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1221,32 +1291,32 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'abschlussprojekt.bbl' found.
 
 (./abschlussprojekt.bbl)
-Package biblatex Info: Reference section=0 on input line 26.
-Package biblatex Info: Reference segment=0 on input line 26.
+Package biblatex Info: Reference section=0 on input line 42.
+Package biblatex Info: Reference segment=0 on input line 42.
  (./abschlussprojekt.nav) [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 52
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 68
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 52.
+ut line 68.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1257,138 +1327,150 @@ thkerncmss.
 <population.pdf, id=45, 397.485pt x 184.69pt>
 File: population.pdf Graphic file (type pdf)
 <use population.pdf>
-Package pdftex.def Info: population.pdf  used on input line 63.
+Package pdftex.def Info: population.pdf  used on input line 79.
 (pdftex.def)             Requested size: 435.24896pt x 202.24371pt.
 
-Overfull \vbox (13.05408pt too high) detected at line 63
+Overfull \vbox (17.77882pt too high) detected at line 79
  []
 
 [3
 
  <./population.pdf>]
-<corrplot nierenmarker.pdf, id=56, 377.41pt x 303.1325pt>
+<corrplot nierenmarker.pdf, id=59, 377.41pt x 303.1325pt>
 File: corrplot nierenmarker.pdf Graphic file (type pdf)
 <use corrplot nierenmarker.pdf>
-Package pdftex.def Info: corrplot nierenmarker.pdf  used on input line 75.
+Package pdftex.def Info: corrplot nierenmarker.pdf  used on input line 91.
 (pdftex.def)             Requested size: 261.15202pt x 209.75371pt.
 
-Overfull \vbox (12.83224pt too high) detected at line 75
+Overfull \vbox (17.55699pt too high) detected at line 91
  []
 
 [4
 
  <./corrplot nierenmarker.pdf>]
-<ZhSCreGFR.pdf, id=67, 540.0175pt x 198.7425pt>
+<ZhSCreGFR.pdf, id=70, 540.0175pt x 198.7425pt>
 File: ZhSCreGFR.pdf Graphic file (type pdf)
 <use ZhSCreGFR.pdf>
-Package pdftex.def Info: ZhSCreGFR.pdf  used on input line 86.
+Package pdftex.def Info: ZhSCreGFR.pdf  used on input line 102.
 (pdftex.def)             Requested size: 443.9558pt x 163.39142pt.
 
-Overfull \hbox (8.70683pt too wide) in paragraph at lines 86--86
+Overfull \hbox (8.70683pt too wide) in paragraph at lines 102--102
  [] 
  []
 
 
-Overfull \vbox (6.6603pt too high) detected at line 86
+Overfull \vbox (11.38504pt too high) detected at line 102
  []
 
 [5
 
  <./ZhSCreGFR.pdf>]
-<HexScat.pdf, id=86, 540.0175pt x 198.7425pt>
+<HexScat.pdf, id=89, 540.0175pt x 198.7425pt>
 File: HexScat.pdf Graphic file (type pdf)
 <use HexScat.pdf>
-Package pdftex.def Info: HexScat.pdf  used on input line 97.
+Package pdftex.def Info: HexScat.pdf  used on input line 113.
 (pdftex.def)             Requested size: 443.9558pt x 163.39142pt.
 
-Overfull \hbox (8.70683pt too wide) in paragraph at lines 97--97
+Overfull \hbox (8.70683pt too wide) in paragraph at lines 113--113
  [] 
+ []
+
+
+Overfull \vbox (0.88516pt too high) detected at line 113
  []
 
 [6
 
  <./HexScat.pdf>]
-<C24xeGFRStart.pdf, id=103, 312.16624pt x 198.7425pt>
+<C24xeGFRStart.pdf, id=106, 312.16624pt x 198.7425pt>
 File: C24xeGFRStart.pdf Graphic file (type pdf)
 <use C24xeGFRStart.pdf>
-Package pdftex.def Info: C24xeGFRStart.pdf  used on input line 109.
+Package pdftex.def Info: C24xeGFRStart.pdf  used on input line 125.
 (pdftex.def)             Requested size: 317.72987pt x 202.2901pt.
 
-Overfull \vbox (10.13625pt too high) detected at line 109
+Overfull \vbox (14.861pt too high) detected at line 125
  []
 
 [7
 
  <./C24xeGFRStart.pdf>]
-<C24xM.pdf, id=122, 397.485pt x 184.69pt>
+<C24xM.pdf, id=125, 397.485pt x 184.69pt>
 File: C24xM.pdf Graphic file (type pdf)
 <use C24xM.pdf>
-Package pdftex.def Info: C24xM.pdf  used on input line 120.
+Package pdftex.def Info: C24xM.pdf  used on input line 136.
 (pdftex.def)             Requested size: 426.54211pt x 198.19685pt.
 
-Overfull \vbox (6.043pt too high) detected at line 120
+Overfull \vbox (10.76775pt too high) detected at line 136
  []
 
 [8
 
  <./C24xM.pdf>]
-<ParaAbweichung.pdf, id=133, 397.485pt x 184.69pt>
+<ParaAbweichung.pdf, id=136, 397.485pt x 184.69pt>
 File: ParaAbweichung.pdf Graphic file (type pdf)
 <use ParaAbweichung.pdf>
-Package pdftex.def Info: ParaAbweichung.pdf  used on input line 131.
+Package pdftex.def Info: ParaAbweichung.pdf  used on input line 147.
 (pdftex.def)             Requested size: 430.89885pt x 200.2231pt.
 
-Overfull \vbox (9.49197pt too high) detected at line 131
+Overfull \vbox (14.21672pt too high) detected at line 147
  []
 
 [9
 
  <./ParaAbweichung.pdf>]
-<SchwerxMord.png, id=144, 1505.625pt x 1003.75pt>
+<SchwerxMord.png, id=147, 1505.625pt x 1003.75pt>
 File: SchwerxMord.png Graphic file (type png)
 <use SchwerxMord.png>
-Package pdftex.def Info: SchwerxMord.png  used on input line 142.
+Package pdftex.def Info: SchwerxMord.png  used on input line 158.
 (pdftex.def)             Requested size: 282.90916pt x 188.60088pt.
 
-Overfull \vbox (13.56021pt too high) detected at line 142
+Overfull \vbox (18.28496pt too high) detected at line 158
  []
 
 [10
 
  <./SchwerxMord.png>]
-<KomorxMort.png, id=152, 2509.375pt x 1204.5pt>
+<KomorxMort.png, id=155, 2509.375pt x 1204.5pt>
 File: KomorxMort.png Graphic file (type png)
 <use KomorxMort.png>
-Package pdftex.def Info: KomorxMort.png  used on input line 154.
+Package pdftex.def Info: KomorxMort.png  used on input line 170.
 (pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
- [11
+
+Overfull \vbox (2.45416pt too high) detected at line 170
+ []
+
+[11
 
  <./KomorxMort.png>]
-<NephroxMort.png, id=159, 2509.375pt x 1204.5pt>
+<NephroxMort.png, id=162, 2509.375pt x 1204.5pt>
 File: NephroxMort.png Graphic file (type png)
 <use NephroxMort.png>
-Package pdftex.def Info: NephroxMort.png  used on input line 164.
+Package pdftex.def Info: NephroxMort.png  used on input line 180.
 (pdftex.def)             Requested size: 369.96426pt x 177.5795pt.
- [12
+
+Overfull \vbox (2.45416pt too high) detected at line 180
+ []
+
+[12
 
  <./NephroxMort.png>]
-<therapiedauer_mortalitaet.png, id=166, 722.7pt x 433.62pt>
+<therapiedauer_mortalitaet.png, id=170, 722.7pt x 433.62pt>
 File: therapiedauer_mortalitaet.png Graphic file (type png)
 <use therapiedauer_mortalitaet.png>
-Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 174.
+Package pdftex.def Info: therapiedauer_mortalitaet.png  used on input line 190.
 
 (pdftex.def)             Requested size: 304.67294pt x 182.80066pt.
 
-Overfull \vbox (2.95058pt too high) detected at line 174
+Overfull \vbox (7.67532pt too high) detected at line 190
  []
 
 [13
 
  <./therapiedauer_mortalitaet.png>]
-<Rplot.png, id=174, 647.41875pt x 283.0575pt>
+<Rplot.png, id=177, 647.41875pt x 283.0575pt>
 File: Rplot.png Graphic file (type png)
 <use Rplot.png>
-Package pdftex.def Info: Rplot.png  used on input line 184.
+Package pdftex.def Info: Rplot.png  used on input line 200.
 (pdftex.def)             Requested size: 391.7214pt x 171.26543pt.
  [14
 
@@ -1415,13 +1497,13 @@ Package logreq Info: Writing requests to 'abschlussprojekt.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30907 strings out of 474116
- 601221 string characters out of 5743682
+ 34020 strings out of 474116
+ 674676 string characters out of 5743682
  1938187 words of memory out of 5000000
- 52669 multiletter control sequences out of 15000+600000
+ 55741 multiletter control sequences out of 15000+600000
  572258 words of font info for 76 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 128i,11n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,12n,123p,689b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><
 /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></
@@ -1431,10 +1513,10 @@ sr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr
 ocal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on abschlussprojekt.pdf (14 pages, 892342 bytes).
+Output written on abschlussprojekt.pdf (14 pages, 893475 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+ 230 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

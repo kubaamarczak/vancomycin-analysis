@@ -14,11 +14,27 @@
 \usepackage{hyperref}
 \usepackage{wasysym}
 \usepackage{xcolor}
+\usepackage{tikz}
+\definecolor{progress}{HTML}{D6D6F0}
 
 \title{Abschlussprojekt}
 \author[]{Sergio Alvarez, Ilkay Aydin, Jakub Marczak, Nermine Msolly}
+
 \setbeamertemplate{footline}{
-\hfill \insertshortauthor \hspace{1em} \insertframenumber/\inserttotalframenumber \hspace{1em}
+\begin{tikzpicture}[remember picture,overlay]
+\fill[gray!15]
+(current page.south west)
+rectangle
+([yshift=0.13cm]current page.south east);
+
+\fill[progress]
+(current page.south west)
+rectangle
+([xshift=\paperwidth*\insertframenumber/\inserttotalframenumber,
+  yshift=0.13cm]current page.south west);
+\end{tikzpicture}
+\vspace{0.01cm}
+\hfill \raisebox{0.2cm}{\insertframenumber/\inserttotalframenumber} \hspace{0.1cm}
 }
 \thispagestyle{empty}
 \date{24. Februar 2026}
