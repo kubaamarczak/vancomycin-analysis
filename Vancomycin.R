@@ -15,6 +15,8 @@ library(dplyr)
 library(corrplot)
 library(hexbin)
 library(scales)
+library(tikzDevice)
+library(cowplot)
 ## -----------------------------------------------------------------------------
 
 ## POPULATION VERSTEHEN --------------------------------------------------------
@@ -42,8 +44,36 @@ long$variable <- factor(long$variable,
                              levels = c("age","height","weight"),
                              labels = c("Alter (Jahre)", "Größe (cm)", "Gewicht (kg)"))
 
+## Für den Bericht
+tikz("population.tex", width=5.7, height=3.3)
+
 ggplot(long, aes(x = value, color = gender)) +
-  geom_density(linewidth = 0.5) +
+  geom_density(kernel = "gaussian", 
+               adjust = 1.8,
+               linewidth = 0.7) +
+  geom_rug(alpha = 0.15, linewidth = 0.5) +
+  facet_wrap(~ variable, scales = "free_x", nrow = 1) +
+  labs(x = NULL, y = "Dichte", color = "Geschlecht") +
+  scale_color_manual(values = c("male" = "#5ac9c7", "female" = "#ec5b5b"),
+                     labels = c("männlich", "weiblich")) +
+  guides(color = guide_legend(override.aes = list(linewidth = 0.5))) +
+  theme_minimal() + theme(
+    text = element_text(size = 9),
+    axis.title = element_text(size = 7),
+    axis.text = element_text(size = 6),
+    plot.title = element_text(size = 13),
+    legend.key.size = unit(0.3, "cm"),
+    legend.spacing.x = unit(0.1, "cm"),
+    legend.title = element_text(size=7)
+  )
+
+dev.off()
+
+## Für die Präsentation
+ggplot(long, aes(x = value, color = gender)) +
+  geom_density(kernel = "gaussian", 
+               adjust = 1.8,
+               linewidth = 0.5) +
   geom_rug(alpha = 0.15, linewidth = 0.5) +
   facet_wrap(~ variable, scales = "free_x", nrow = 1) +
   labs(x = NULL, y = "Dichte", color = "Geschlecht") +
@@ -87,10 +117,42 @@ dat_kidney <- data.frame(
   eGFREnd = dat$eGFREnd
 )
 
+##Für die Präsentation
 corrplot(cor(dat_kidney, use = "complete.obs"),
          tl.col = "black", tl.cex = 1, tl.srt = 45, cl.cex = 0.75, cl.ratio = 0.2, cl.offset = 1)
 par(opar)
 dev.off()
+
+## Für den Bericht
+tikz("corrplot.tex", width=5.4, height=4.4)
+
+corrplot(cor(dat_kidney, use = "complete.obs"),
+         tl.col = "black", tl.cex = 1, tl.srt = 45, cl.cex = 0.75, cl.ratio = 0.2, cl.offset = 1)
+dev.off()
+par(opar)
+
+tikz("corrplot.tex", width=5.4, height=4.4)
+
+op <- par(no.readonly = TRUE)
+par(
+  mar = c(2, 2, 6, 2),  # oben mehr Platz! (3. Wert)
+  xpd = NA              # zeichnet Text auch außerhalb Plotbereich
+)
+
+corrplot(
+  cor(dat_kidney, use="complete.obs"),
+  tl.col = "black",
+  tl.cex = 0.85,
+  tl.srt = 45,
+  cl.cex = 0.75,
+  cl.ratio = 0.2,
+  cl.offset = 1,
+  mar = c(0, 0, 3, 0)   # ebenfalls oben Platz geben
+)
+
+par(op)
+dev.off()
+
 ## -------------------------------
 
 ## Auswirkung vom durchschnittl. Vancomycin-Spiegel auf Nierenmarker
@@ -111,7 +173,7 @@ ggplot(longC, aes(time, C)) +
 p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "loess", se = TRUE, color = "red") +
-  scale_fill_continuous(name = "Patienten") +
+  scale_fill_continuous(name = "Anzahl\nPatienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"SCr"),
@@ -128,7 +190,7 @@ p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
 p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_point(alpha = 0.75) +
   geom_smooth(method = "loess", se = TRUE, color = "red") +
-  scale_fill_continuous(name = "Patienten") +
+  scale_fill_continuous(name = "Anzahl\nPatienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
@@ -150,7 +212,7 @@ longC <- dat %>%
 p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
   geom_hex(alpha = 0.75, bins = 41) +
   geom_smooth(method = "loess", se = TRUE, color = "red") +
-  scale_fill_continuous(name = "Patienten") +
+  scale_fill_continuous(name = "Anzahl\nPatienten") +
   labs(
     x = expression(bar(C)),
     y = expression(Delta*"eGFR")
@@ -162,6 +224,7 @@ p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
         legend.key.size = unit(0.5, "cm"),
         legend.spacing.x = unit(0.1, "cm"))
 
+##Für die Präsentation
 plot_save_1 <- grid.arrange(p1, p2, ncol = 2)
 
 ggsave("ZhSCreGFR.pdf",
@@ -177,6 +240,93 @@ ggsave("HexScat.pdf",
        width = 19,
        height = 7,
        units = "cm")
+
+## Für den Bericht
+max_count <- max(
+  hexbin(dat$C_mean, dat$deltaSCr, xbins = 41)@count,
+  hexbin(dat$C_mean, dat$deltaeGFR, xbins = 41)@count
+)
+
+p1 <- ggplot(dat, aes(x = C_mean, y = deltaSCr)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
+  scale_fill_viridis_c(
+    option = "E",
+    breaks = c(0, 15, 30),
+    name = "Anzahl\nPatienten",
+    limits = c(0, max_count)
+  ) +
+  labs(
+    x = "$\\bar{C}$",
+    y = "$\\Delta SCr$",
+    
+  ) +
+  theme_minimal() +
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        axis.text = element_text(size = 7),
+        axis.title.x = element_text(margin = margin(t = 10)),
+        legend.title = element_text(size = 8),
+        legend.text = element_text(size = 7),
+        legend.key.size = unit(0.3, "cm"),
+        legend.spacing.x = unit(0.05, "cm")
+  )
+
+p3 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_point(alpha = 0.75) +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
+  scale_fill_viridis_c(
+    option = "E",
+    breaks = c(0, 15, 30),
+    name = "Anzahl\nPatienten",
+    limits = c(0, max_count)
+  ) +
+  labs(
+    x = "$\\bar{C}$",
+    y = "$\\Delta eGFR$"
+  ) +
+  theme_minimal() +
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        axis.text = element_text(size = 7),
+        axis.title.x = element_text(margin = margin(t = 10)),
+        legend.title = element_text(size = 8),
+        legend.text = element_text(size = 7),
+        legend.key.size = unit(0.3, "cm"),
+        legend.spacing.x = unit(0.05, "cm")
+  )
+
+p2 <- ggplot(dat, aes(x = C_mean, y = deltaeGFR)) +
+  geom_hex(alpha = 0.75, bins = 41) +
+  geom_smooth(method = "loess", se = TRUE, color = "red") +
+  scale_fill_viridis_c(
+    option = "E",
+    breaks = c(0, 15, 30),
+    name = "Anzahl\nPatienten",
+    limits = c(0, max_count)
+  ) +
+  labs(
+    x = "$\\bar{C}$",
+    y = "$\\Delta eGFR$"
+  ) +
+  theme_minimal() +
+  theme(text = element_text(size = 10),
+        axis.title = element_text(size = 9),
+        axis.text = element_text(size = 7),
+        axis.title.x = element_text(margin = margin(t = 10)),
+        legend.title = element_text(size = 8),
+        legend.text = element_text(size = 7),
+        legend.key.size = unit(0.3, "cm"),
+        legend.spacing.x = unit(0.05, "cm")
+  )
+
+tikz("ZhSCreGFR.tex", width=7, height=2.5)
+plot_save_1 <- grid.arrange(p1, p2, ncol = 2)
+dev.off()
+
+tikz("HexScat.tex", width=7, height=2.5)
+plot_save_2 <- grid.arrange(p3, p2, ncol = 2)
+dev.off()
 
 ## -----------------------------------------------------------------
 
@@ -260,6 +410,7 @@ ggsave("SAPSSOFAeGFR.pdf",
 dat <- dat %>%
   mutate(Status = ifelse(is.na(Mortalitydate), "Überlebt", "Verstorben"))
 
+## Für die Präsentation
 dat %>%
   filter(!is.na(eGFRStart)) %>%
   ggplot(aes(x = Status, y = eGFRStart)) +
@@ -282,6 +433,29 @@ ggsave("eGFRxMort.pdf",
        width = 16, height = 8.5, 
        units = "cm")
 
+## Für den Bericht
+tikz("eGFRMort.tex", width=7, height=3)
+dat %>%
+  filter(!is.na(eGFRStart)) %>%
+  ggplot(aes(x = Status, y = eGFRStart)) +
+  geom_boxplot(width = 0.45, outlier.shape = NA, fill= "grey85", color="black") +
+  geom_jitter(width = 0.12, alpha = 0.1, size = 1.2, color = "grey40") +
+  coord_flip() +
+  labs(
+    x = NULL,
+    y = expression(paste(eGFR[Start]," (ml/min/1.73 m²)"))
+  ) +
+  theme_minimal(base_size = 13)+
+  theme( 
+    legend.position = "FALSE",
+    plot.margin = margin(10, 25, 10, 10, unit = "pt"),
+    axis.text.x = element_text(size = 8),
+    axis.title.x = element_text(size= 11, margin = margin(t = 10)),
+    panel.grid.major.y = element_blank()
+  )
+
+dev.off()
+
 ## ---------------------------------------------------------------------
 
 ## Graphik: Schweregrad der Erkrankung 
@@ -293,6 +467,7 @@ my_colors <- c("Lebend" = "#5DA5DA",
                "Gestorben" = "#C44E52")
 
 
+## Für die Präsentation
 p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
   geom_boxplot() +
   labs(x = "Lebenstatus", y = "SOFA (aus 24P)") +
@@ -343,6 +518,71 @@ p4 <- ggplot(dat, aes(mortality_status, CRP)) +
 grid.arrange(
   p1, p2, p3, p4,
   ncol = 2)
+
+##Für den Bericht
+tikz("SevMort.tex", width=7, height=5)
+common_theme <- theme(
+  axis.title.x = element_blank(),
+  axis.text.x  = element_blank(),
+  legend.position = "none"
+)
+
+p1 <- ggplot(dat, aes(mortality_status, SOFA)) +
+  geom_boxplot() +
+  labs(x = NA, y = "SOFA (aus 24P)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  common_theme +
+  theme(axis.title.y = element_text(size = 10),
+        axis.text.y = element_text(size = 9))
+
+p2 <- ggplot(dat, aes(mortality_status, SAPS)) +
+  geom_boxplot() +
+  labs(x = NA, y = "SAPS") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  common_theme +
+  theme(axis.title.y = element_text(size = 10),
+        axis.text.y = element_text(size = 9))
+
+p3 <- ggplot(dat, aes(mortality_status, Leukocytes)) +
+  geom_boxplot() +
+  labs(x = NA, y = "Leukozyten (nL)") +
+  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  common_theme +
+  theme(axis.title.y = element_text(size = 10),
+        axis.text.y = element_text(size = 9))
+
+p4 <- ggplot(dat, aes(mortality_status, CRP)) +
+  geom_boxplot() +
+  labs(x = NA, y = "CRP (mg/dL)") +  aes(fill = mortality_status) +
+  scale_fill_manual(values = my_colors) +
+  theme_minimal() +
+  common_theme +
+  theme(axis.title.y = element_text(size = 10),
+        axis.text.y = element_text(size = 9))
+
+p_leg <- ggplot(dat, aes(mortality_status, SOFA, fill = mortality_status)) +
+  geom_boxplot() +
+  scale_fill_manual(values = my_colors, name = "Lebenstatus") +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        legend.title = element_text(margin = margin(r = 14)),
+        legend.text = element_text(size = 10, margin = margin(l = 3, r = 3)))
+
+leg <- get_legend(p_leg)
+
+panel <- plot_grid(p1, p2, p3, p4, ncol = 2, align = "hv")
+
+final_plot <- plot_grid(panel, leg, ncol = 1, rel_heights = c(1, 0.12))
+
+print(final_plot)
+
+dev.off()
 
 ## -----------------------------------
 
@@ -430,6 +670,52 @@ ggplot() +
          legend.text  = element_text(size = 15),
          panel.grid.major = element_blank()
   )
+
+## Für den Bericht 
+tikz("Komor.tex", width=7, height=4.5)
+ggplot() +
+  geom_col(
+    data = count_df,
+    aes(x = Komorbiditaet, y = n_status, fill = mortality_status)
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Lebend" = "#5DA5DA",
+      "Gestorben" = "#C44E52"
+    )
+  ) +
+  geom_line(
+    data = rate_df,
+    aes(x = Komorbiditaet, y = mort_rate * scale_factor, group = 1),
+    color = "black", linewidth = 1.2
+  ) +
+  geom_point(
+    data = rate_df,
+    aes(x = Komorbiditaet, y = mort_rate * scale_factor, color = "Mortalitätsrate", group = 1),
+    size = 3
+  ) +
+  scale_color_manual(
+    name = "",
+    values = c("Mortalitätsrate" = "black")
+  ) +
+  scale_y_continuous(
+    name = "Anzahl Patienten",
+    sec.axis = sec_axis(~ . / scale_factor, name = "Mortalitätsrate")
+  ) +
+  labs(x = "Komorbidität", fill = "Status") +
+  theme_minimal() +
+  theme( axis.title.y = element_text(size = 12, margin = margin(r = 7)),
+         axis.title.y.right = element_text(size = 12, margin = margin(l = 7)),
+         axis.text.y = element_text(size = 8),
+         axis.text.y.right = element_text(size = 8),
+         axis.title.x = element_text(size = 12),
+         axis.text.x = element_text(size = 9, angle = 45, hjust = 1, vjust = 1),
+         
+         legend.title = element_text(size = 10),
+         legend.text  = element_text(size = 9),
+         panel.grid.major = element_blank()
+  )
+dev.off()
 ## -------------------------------------------------------------------
 
 ## Graphik: Welche Nephrotoxine begleiten die Mortalität am meisten?
@@ -520,6 +806,52 @@ ggplot() +
         legend.text  = element_text(size = 15),
         panel.grid.major = element_blank()
     ) 
+
+## Für den Bericht
+tikz("Nephro.tex", width=7, height=4.5)
+ggplot() +
+  geom_col(
+    data = count_df,
+    aes(x = Nephrotoxin, y = n_status, fill = mortality_status)
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Lebend" = "#5DA5DA",
+      "Gestorben" = "#C44E52"
+    )
+  ) +
+  geom_line(
+    data = rate_df,
+    aes(x = Nephrotoxin, y = mort_rate * scale_factor, group = 1),
+    color = "black", linewidth = 1.2
+  ) +
+  geom_point(
+    data = rate_df,
+    aes(x = Nephrotoxin, y = mort_rate * scale_factor, color = "Mortalitätsrate", group = 1),
+    size = 3
+  ) +
+  scale_color_manual(
+    name = "",
+    values = c("Mortalitätsrate" = "black")
+  ) +
+  scale_y_continuous(
+    name = "Anzahl Patienten",
+    sec.axis = sec_axis(~ . / scale_factor, name = "Mortalitätsrate"),
+  ) +
+  labs(x = "Nephrotoxin", fill = "Status") +
+  theme_minimal() +
+  theme( axis.title.y = element_text(size = 12, margin = margin(r = 7)),
+         axis.title.y.right = element_text(size = 12, margin = margin(l = 7)),
+         axis.text.y = element_text(size = 8),
+         axis.text.y.right = element_text(size = 8),
+         axis.title.x = element_text(size = 12),
+         axis.text.x = element_text(size = 9, angle = 45, hjust = 1, vjust = 1),
+         
+         legend.title = element_text(size = 10),
+         legend.text  = element_text(size = 9),
+         panel.grid.major = element_blank()
+  ) 
+dev.off()
   
 ## ---------------------------------------------------------------------
 
