@@ -31,6 +31,7 @@ df <- data.frame(
 df <- df %>%
   mutate(
     age = as.numeric(difftime(Sys.Date(), as.Date(birthdate), units = "days"))/365.25,
+    
     gender = factor(tolower(gender), levels = c("male","female"))
   )
 
@@ -1253,5 +1254,51 @@ summary <- long %>%
 
 ggplot(summary, aes(comorbidity, mort_rate)) +
   geom_col()
+
+
+## GRAPHIK 8: Verteilung von C24 nach Mortalitätsstatus
+
+dat_c24 <- dat %>%
+  filter(!is.na(C24)) %>%
+  mutate(
+    gestorben_label = ifelse(!is.na(Mortalitydate), "Gestorben", "Lebend"),
+    gestorben_label = factor(gestorben_label, levels = c("Lebend", "Gestorben"))
+  )
+
+g_c24 <- ggplot(dat_c24, aes(x = C24, fill = gestorben_label)) +
+  geom_histogram(
+    binwidth = 5,
+    color = "white",
+    position = "identity",   # superposition
+    alpha = 0.6              # transparence
+  ) +
+  scale_fill_manual(
+    values = c("Gestorben" = "#E64B35", "Lebend" = "#4DBBD5"),
+    name = "Status"
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 55, by = 5),
+    limits = c(0, 55)
+  ) +
+  scale_y_continuous(
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(
+    title    = "Verteilung des Vancomycin-Serumspiegels (C24) nach Mortalitätsstatus",
+    subtitle = "Überlagertes Histogramm mit Transparenz | Klassenbreite = 5 mg/L",
+    x        = "C24-Serumspiegel (mg/L)",
+    y        = "Anzahl Patienten",
+    caption  = "n = 922 Patienten | Krankenhaus Köln-Merheim 2010–2022"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position  = "bottom",
+    plot.title       = element_text(face = "bold", size = 15),
+    plot.subtitle    = element_text(color = "grey40", size = 11),
+    plot.caption     = element_text(color = "grey50", size = 9),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
+
 
 
