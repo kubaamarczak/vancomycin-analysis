@@ -1254,7 +1254,79 @@ summary <- long %>%
 
 ggplot(summary, aes(comorbidity, mort_rate)) +
   geom_col()
+my_colors <- c("Gestorben" = "#E64B35", "Lebt" = "#4DBBD5")
+#Graph7
+# 1) Daten vorbereiten
+dat_duration <- dat %>%
+  mutate(
+    mortality_status = ifelse(is.na(Mortalitydate), "Lebt", "Gestorben"),
+    mortality_status = factor(mortality_status, levels = c("Lebt", "Gestorben")),
+    Start = as.Date(Start),
+    End   = as.Date(End),
+    Therapiedauer = as.numeric(difftime(End, Start, units = "days"))
+  ) %>%
+  filter(!is.na(Therapiedauer), Therapiedauer >= 0)
 
+# n pro Gruppe (für Subtitle)
+n_counts <- dat_duration %>%
+  count(mortality_status) %>%
+  mutate(lbl = paste0(as.character(mortality_status), ": n=", n)) %>%
+  pull(lbl) %>%
+  paste(collapse = " | ")
+
+# (Optional) kurze Kennzahlen für Bericht / Kontrolle
+summary_tbl <- dat_duration %>%
+  group_by(mortality_status) %>%
+  summarise(
+    n = n(),
+    median = median(Therapiedauer),
+    IQR = IQR(Therapiedauer),
+    p90 = quantile(Therapiedauer, 0.90),
+    .groups = "drop"
+  )
+print(summary_tbl)
+
+# 2) Plot
+g_duration <- ggplot(dat_duration, aes(x = mortality_status, y = Therapiedauer, fill = mortality_status)) +
+
+  # Violin: Verteilungsform / Dichte
+  geom_violin(trim = FALSE, alpha = 0.25, color = NA) +
+
+  # Boxplot: Median + IQR (ohne Outlier-Punkte, damit es nicht doppelt wird)
+  geom_boxplot(width = 0.22, alpha = 0.80, outlier.shape = NA) +
+
+  # Median als Punkt (sehr hilfreich fürs Auge)
+  stat_summary(fun = median, geom = "point", size = 2.6, color = "black") +
+
+  # Punkte (leicht, damit keine Überladung)
+  geom_jitter(width = 0.12, alpha = 0.12, size = 1, color = "black") +
+
+  # Farben
+  scale_fill_manual(values = my_colors) +
+
+  # Achsen / Labels
+  labs(
+    title    = "Therapiedauer nach Mortalitätsstatus",
+    subtitle = paste0("Dauer der kontinuierlichen Vancomycin-Infusion (", n_counts, ")"),
+    x        = "Lebenstatus",
+    y        = "Therapiedauer (Tage)",
+    caption  = "Hinweis: Für bessere Lesbarkeit Fokus auf 0–20 Tage (Ausreißer bleiben im Datensatz)."
+  ) +
+
+  # Zoom (wichtig: coord_cartesian schneidet nur die Ansicht, löscht keine Daten!)
+  coord_cartesian(ylim = c(0, 20)) +
+
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position   = "none",
+    plot.title        = element_text(face = "bold", size = 18),
+    plot.subtitle     = element_text(color = "grey40"),
+    plot.caption      = element_text(color = "grey50", size = 9),
+    panel.grid.minor  = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
+
+print(g_duration)
 
 ## GRAPHIK 8: Verteilung von C24 nach Mortalitätsstatus
 
